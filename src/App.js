@@ -3,11 +3,7 @@ import Layout from './layout/Layout';
 
 function App() {
   return (
-    <Layout>
-      <Container style={{minHeight:'75vh'}}>
-        
-      </Container>
-    </Layout>
+    <Layout/>
   );
 }
 
