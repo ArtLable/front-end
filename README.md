@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# ART-Lable
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Repositories   
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FArtLable&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-## Available Scripts
+---
+# Toon-Maker Back-end  (9월 융합 프로젝트)
+> **Team ArtLable** <br/> **개발기간: 2023.09.03 ~ 2023.09.27**
 
-In the project directory, you can run:
+---
+## Team Member Introduction (Server)
 
-### `npm start`
+| 정민호                                                                               | 정재민                                                                               | 권은지                                                                               |
+|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| <img width="160px" src="https://avatars.githubusercontent.com/u/134987020?v=4" /> | <img width="160px" src="https://avatars.githubusercontent.com/u/125876896?v=4" /> | <img width="160px" src="https://avatars.githubusercontent.com/u/139085498?v=4" /> |
+| <center>[@jeongmino1](https://github.com/jeongmino1)                              | <center>[@devJaem](https://github.com/devJaem)                                    | <center>[@kej2971](https://github.com/kej2971)                                    |
+| BackEnd                                                                           | Back & WorkFlow                                                                   | FrontEnd                                                                          |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+## Project Introduction
 
-### `npm test`
+### 서비스 소개
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started Guide
+### 요구사항
+For building and running the application you need:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [MySQL 8.0.33](https://dev.mysql.com/downloads/mysql/)
+- [JAVA 11.0.15](https://github.com/ojdkbuild/ojdkbuild)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Stacks 🐈
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 개발환경
+<img src="https://img.shields.io/badge/Intelii J-000000?style=for-the-badge&logo=intellijidea&logoColor=white"><br>
+<img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white"><br>
+<img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"><br>
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"><br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 개발언어
+![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=white)<br>
+![JAVA](https://img.shields.io/badge/Java-6DB33F?style=for-the-badge&logo=Java&logoColor=white)<br>
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 구성
+![MIRO](https://img.shields.io/badge/miro-050038?style=for-the-badge&logo=miro&logoColor=white)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 프레임워크/라이브러리
 
-## Learn More
+![springboot](https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)<br>
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white)<br>
+![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white)<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 데이터베이스
+![MYSQL](https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white)<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 소통수단
+<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"><br>
+<img src="https://img.shields.io/badge/kakaotalk-FFCD00?style=for-the-badge&logo=kakaotalk&logoColor=white"><br>
+<img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"><br>
 
-### Code Splitting
+--- 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Screen Layout 📺
 
-### Analyzing the Bundle Size
+### [LayOut](https://github.com/GoOnThat/GoOnThat/wiki/Screen-Layout)
+|  메인 페이지 |                                                                                                                         로그인 페이지 |
+|-----------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+|  |  |  
+|   회원가입 페이지 |                                                                                                                         게시판 페이지 |  
+|                |             
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
+# Main Function 📦
 
-### Making a Progressive Web App
+---
+### ⭐️  -정재민
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### ⭐️  - 정민호
 
-### Advanced Configuration
+### ⭐️  -권은지
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
+## Architecture
+[Layerd Architecture](https://velog.io/@hanblueblue/%EB%B2%88%EC%97%AD-Layered-Architecture)
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Link
+[Back-End](https://github.com/ArtLable/back-end)<br>
+[Front-End](https://github.com/ArtLable/front-end)<br>
+[Ai]()
