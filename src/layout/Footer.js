@@ -7,7 +7,6 @@ const Footer = () => {
   return(
     <footer>
       <Container>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Nav className="ml-auto">
               <Nav.Link>로고</Nav.Link>
             </Nav>

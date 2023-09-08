@@ -1,6 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../bootstrap.css';
+import './Resources/assets/css/main.css';
+import './Resources/assets/css/fontawesome-all.min.css';
+import './Resources/assets/css/noscript.css';
 import {Navbar, Nav, Container} from 'react-bootstrap'
 
 const Header = () => {
@@ -15,7 +18,7 @@ const Header = () => {
               <Nav.Link>LOGIN</Nav.Link>
                 <form class="d-flex">
                     <input class="form-control me-sm-2" type="search" placeholder="Search"/>
-                    <button type="submit" class="btn btn-outline-success">Search</button>
+                    <button type="submit" class="btn btn-outline-info">Search</button>
                 </form>
             </Nav>
         </Container>
