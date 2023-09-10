@@ -89,15 +89,29 @@ section, summary, time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;}
 
-article, aside, details, figcaption, figure,
+article, aside, details,
 footer, header, hgroup, menu, nav, section {
+	font-weight: bold;
+	font-size: large;
 	display: block;}
+
+figure, figcaption {
+	font-size: medium;
+}	
+
+.container {
+	max-width: 1680px;
+}
 
 body {
 	line-height: 1;
 }
 
 ol, ul {
+	display: flex;
+}
+
+li {
 	list-style: none;
 }
 
@@ -379,14 +393,14 @@ input, select, textarea {
 		background-color: transparent;
 		border: 0;
 		border-radius: 0;
-		box-shadow: inset 0 0 0 2px #36383c;
-		color: #ffffff !important;
+		box-shadow: inset 0 0 0 2px #6ec985;
+		color: #4dae62 !important;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.9em;
 		font-weight: 300;
-		height: 3.05556em;
-		letter-spacing: 0.1em;
+		height: 2.75556em;
+		letter-spacing: 0.05em;
 		line-height: 3.05556em;
 		padding: 0 2.5em;
 		text-align: center;
@@ -400,8 +414,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 2px #34a58e;
-			color: #34a58e !important;
+			box-shadow: inset 0 0 0 2px #21a089;
+			color: #021d17 !important;
 		}
 
 			input[type="submit"]:hover:active,
@@ -409,8 +423,8 @@ input, select, textarea {
 			input[type="button"]:hover:active,
 			button:hover:active,
 			.button:hover:active {
-				background-color: rgba(52, 165, 142, 0.15);
-				color: #34a58e !important;
+				background-color: rgba(85, 235, 205, 0.053);
+				color: #b5efe33c !important;
 			}
 
 		input[type="submit"].icon,
@@ -458,7 +472,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #34a58e;
+			background-color: #34a58e24;
 			box-shadow: none;
 		}
 
@@ -467,7 +481,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #47c5ab;
+				background-color: #47c5ac33;
 				color: #ffffff !important;
 			}
 
@@ -476,7 +490,7 @@ input, select, textarea {
 				input[type="button"].primary:hover:active,
 				button.primary:hover:active,
 				.button.primary:hover:active {
-					background-color: #287e6d;
+					background-color: #44676071;
 				}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -493,10 +507,10 @@ input, select, textarea {
 		}
 
 /* Form */
-
+/* 
 	form {
 		margin: 0 0 2em 0;
-	}
+	} */
 
 		form > :last-child {
 			margin-bottom: 0;
@@ -586,9 +600,9 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: #34363b;
+		background: #4ecf6846;
 		border: 0;
-		border-radius: 0;
+		border-radius: 3px;
 		color: #a0a0a1;
 		display: block;
 		outline: 0;
@@ -730,7 +744,7 @@ input, select, textarea {
 	}
 
 	::-webkit-input-placeholder {
-		color: #707071 !important;
+		color: #7070719f !important;
 		opacity: 1.0;
 	}
 
@@ -799,8 +813,8 @@ input, select, textarea {
 		}
 
 	ul {
-		list-style: disc;
-		margin: 0 0 2em 0;
+		list-style: none;
+		margin: 0 0 0;
 		padding-left: 1em;
 	}
 
@@ -1603,25 +1617,38 @@ input, select, textarea {
 		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	}
 
-		#main .thumb {
+		#columns {
+			column-width: 250px;
+			column-gap: 15px;
+			/* border: 5px solid green; */
+		}
+
+		#columns .thumb {
 			-moz-transition: opacity 1.25s ease-in-out;
 			-webkit-transition: opacity 1.25s ease-in-out;
 			-ms-transition: opacity 1.25s ease-in-out;
 			transition: opacity 1.25s ease-in-out;
+			padding: 10px;
 			pointer-events: auto;
 			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 			opacity: 1;
 			overflow: hidden;
 			position: relative;
+			display: inline-block;
+			border:1px solid rgba(0,0,0,0.2);
+			margin:0;
+			box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+			margin-bottom: 10px;
+
 		}
 
-			#main .thumb:after {
+			/* #main .thumb:after {
 				background-image: -moz-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
 				background-image: -webkit-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
 				background-image: -ms-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
 				background-image: linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
 				pointer-events: none;
-				background-size: cover;
+				background-size: contain;
 				content: '';
 				display: block;
 				height: 100%;
@@ -1629,22 +1656,31 @@ input, select, textarea {
 				position: absolute;
 				top: 0;
 				width: 100%;
-			}
+			} */
 
-			#main .thumb > .image {
+			#columns .thumb > .image {
 				-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-				background-position: center;
+				/* background-size: 100%;			 */
+				/* background-position: center;
 				background-repeat: no-repeat;
-				background-size: cover;
 				border: 0;
-				height: 100%;
+				height: auto;
 				left: 0;
-				position: absolute;
+				position: relative;
 				top: 0;
 				width: 100%;
+				max-width: 100%;
+				display: block; */
 			}
 
-			#main .thumb > h2 {
+			#columns .thumb > .image img {
+				width: 100%;
+				height: auto;
+				display: block;
+				border-radius: 8px;
+			}
+
+			/* #columns .thumb > h2 {
 				pointer-events: none;
 				bottom: 1.875em;
 				font-size: 0.8em;
@@ -1652,13 +1688,16 @@ input, select, textarea {
 				margin: 0;
 				position: absolute;
 				z-index: 1;
+			} */
+
+			#columns .thumb figcaption {
+				/* display: none; */
+				border-top:1px solid rgba(0,0,0,0.2);
+				padding: 5px;
+				margin-top: 10px;
 			}
 
-			#main .thumb > p {
-				display: none;
-			}
-
-		#main:after {
+		/* #main:after {
 			pointer-events: none;
 			-moz-transition: opacity 0.5s ease, visibility 0.5s;
 			-webkit-transition: opacity 0.5s ease, visibility 0.5s;
@@ -1675,7 +1714,7 @@ input, select, textarea {
 			visibility: hidden;
 			width: 100%;
 			z-index: 1;
-		}
+		} */
 
 			body.ie #main:after {
 				background: rgba(36, 38, 41, 0.55);
