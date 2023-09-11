@@ -3440,10 +3440,10 @@ textarea.form-control-lg {
   --bs-dropdown-inner-border-radius: calc(var(--bs-border-radius) - var(--bs-border-width));
   --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
   --bs-dropdown-divider-margin-y: 0.5rem;
-  --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --bs-dropdown-box-shadow: 0 0.5rem 1rem rgba(6, 117, 47, 0.15);
   --bs-dropdown-link-color: var(--bs-body-color);
   --bs-dropdown-link-hover-color: #fff;
-  --bs-dropdown-link-hover-bg: #f3969a;
+  --bs-dropdown-link-hover-bg: #ffffff00;
   --bs-dropdown-link-active-color: #fff;
   --bs-dropdown-link-active-bg: #78c2ad;
   --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
@@ -3660,7 +3660,7 @@ textarea.form-control-lg {
   clear: both;
   font-weight: 400;
   color: var(--bs-dropdown-link-color);
-  text-align: inherit;
+  text-align: center;
   text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
@@ -3684,6 +3684,7 @@ textarea.form-control-lg {
 
 .dropdown-menu.show {
   display: block;
+  border: 2px solid #0fa679ac
 }
 
 .dropdown-header {
@@ -4189,6 +4190,7 @@ textarea.form-control-lg {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-left: var(--bs-navbar-nav-link-padding-x);
+    margin-right: 5px;
   }
   .navbar-expand-lg .navbar-nav-scroll {
     overflow: visible;
@@ -4196,6 +4198,10 @@ textarea.form-control-lg {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+  }
+
+  #basic-nav-dropdown {
+    margin-right: 40px;
   }
   .navbar-expand-lg .navbar-toggler {
     display: none;

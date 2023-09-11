@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react'
 import './pages.css';
+import Header from '../layout/Header';
 
 const User = {
   email: 'test@example.com',
@@ -54,6 +55,8 @@ function Login() {
   }, [emailValid, pwValid])
 
   return (
+    <>
+    <Header/>
     <div className="loginpage">
       <div className="titleWrap">
         LOGIN
@@ -103,6 +106,7 @@ function Login() {
         </button>
       </div>
     </div>
+    </>
   )
 }
 

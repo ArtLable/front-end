@@ -1,23 +1,31 @@
-import React from 'react';
-import './Resources/assets/css/main.css';
-import './Resources/assets/css/fontawesome-all.min.css';
-import './Resources/assets/css/noscript.css';
-import {Navbar, Nav, Container} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.css';
+import { React, useState } from 'react';
+import {Navbar, Nav, Container, NavDropdown} from 'react-bootstrap'
 import '../bootstrap.css';
 import { Link } from 'react-router-dom';
 
 
+function Header(props) {
 
-const Header = () => {
+  const [show, setShow] = useState(false);
+  const showDropdown = (e)=>{
+      setShow(!show);
+  }
+  const hideDropdown = e => {
+      setShow(false);
+  }
+  
   return(
     <header>
       <Navbar bg="light" expand="lg">
         <Container className="headerBar">
-          <Navbar.Brand>TOONMAKER</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+          <Navbar.Brand><Link to="/" className="nav-link">TOONMAKER</Link></Navbar.Brand>
             <Nav className="ml-auto">
-              <Nav.Link>NEW MAKE</Nav.Link>
+            <NavDropdown title="CREATE A NEW DRAWING" id="basic-nav-dropdown">
+              <NavDropdown.Item><Link to="" className="dropMenu">Compose the composition</Link></NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item><Link to="" className="dropMenu">Web Novel illustrations</Link></NavDropdown.Item>
+            </NavDropdown>
+            <Link to="/" className="nav-link">HOME</Link>
               <Link to="/Login" className="nav-link">LOGIN</Link>
                 <form class="d-flex">
                     <input class="form-control me-sm-2" type="search" placeholder="Search"/>

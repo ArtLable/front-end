@@ -87,7 +87,12 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
+
+a {
+	border-bottom-color:white;
+}
 
 article, aside, details,
 footer, header, hgroup, menu, nav, section {
@@ -226,14 +231,13 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
 		color: #34a58e;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #34a58e !important;
+			color: #35a58e;
 		}
 
 	strong, b {
@@ -285,6 +289,10 @@ input, select, textarea {
 
 	h6 {
 		font-size: 0.7em;
+	}
+
+	NavDropdown.Divider {
+		
 	}
 
 	@media screen and (max-width: 736px) {
@@ -355,7 +363,7 @@ input, select, textarea {
 
 	hr {
 		border: 0;
-		border-bottom: solid 1px #36383c;
+		border-bottom: solid 0.1px #0fa679ac;
 		margin: 2em 0;
 	}
 
@@ -504,6 +512,24 @@ input, select, textarea {
 		.button:disabled {
 			pointer-events: none;
 			opacity: 0.35;
+		}
+/* 
+		.dropdown-item:hover {
+			background-color: rgba(0, 255, 17, 0.219);
+		}		 */
+
+		.dropMenu {
+			color:#000000a3;
+			font-weight: 600;
+		}
+
+		.dropMenu:hover {
+			color:#35a58e;
+			font-weight: 900;
+		}
+	
+		.basic-nav-dropdown {
+			text-decoration-line: none;
 		}
 
 /* Form */
@@ -664,6 +690,7 @@ input, select, textarea {
 	input[type="url"],
 	select {
 		height: 2.75em;
+		margin-left: 12px;
 	}
 
 	textarea {
@@ -1470,6 +1497,7 @@ input, select, textarea {
 	body {
 		padding: 0 0 4em 0;
 	}
+
 
 	#header {
 		-moz-transform: translateY(0);
