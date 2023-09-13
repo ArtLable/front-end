@@ -1,14 +1,28 @@
-import React from 'react';
-import './Resources/assets/css/main.css';
-import './Resources/assets/css/fontawesome-all.min.css';
-import './Resources/assets/css/noscript.css';
-import {Container} from 'react-bootstrap'
+import React, {useState} from 'react';
+import '../layout/Resources/assets/css/fontawesome-all.min.css';
+import '../layout/Resources/assets/css/main.css';
+import '../layout/Resources/assets/css/noscript.css';
+import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../bootstrap.css';
+import Login from '../pages/Login';
 
 export default function Main() {
 
-	const imageUrls =[ 
+	const [isCardOpen, setIsCardOpen] = useState(false);
+	const [selectedImage, setSelectedImage] = useState(null);
+
+	const openCardModal = (imageUrl) => {
+		setSelectedImage(imageUrl);
+		setIsCardOpen(true);
+	}	
+
+  	const closeCardModal = () => {
+		setSelectedImage(null);
+		setIsCardOpen(false);
+	}	
+
+	const imageUrls = [ 
 	"https://r1.community.samsung.com/t5/image/serverpage/image-id/1230422i353491C53F342C13/image-dimensions/2500?v=v2&px=-1",
 	"https://img.seoul.co.kr/img/upload/2022/10/06/SSI_20221006144927_O2.jpg",
 	"https://www.kbinsure.co.kr/images/ins_prdt/dog_ins/prdt_inform_visual.jpg",
@@ -76,8 +90,9 @@ export default function Main() {
 					<div id="columns">
 						{imageUrls.map((imageUrl, index)=> (
 							<figure className="thumb" key={index}>
-								<a href={imageUrl} className="image">
-									<img src={imageUrl} alt="" />
+								<a href="" className="image">
+									<img src={imageUrl} alt="" onClick={() => openCardModal(imageUrl)} />
+									{isCardOpen && (<Login isOpen={isCardOpen} closeModal={closeCardModal} imageUrl={selectedImage} />)}
 								</a>
 								<figcaption>#귀여운 #멍뭉이 #사진</figcaption>
 							</figure>

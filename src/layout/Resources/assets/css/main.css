@@ -105,7 +105,7 @@ figure, figcaption {
 }	
 
 .container {
-	max-width: 1680px;
+	max-width: 1620px;
 	
 }
 
@@ -542,6 +542,8 @@ input, select, textarea {
 		form > :last-child {
 			margin-bottom: 0;
 			border-radius: 5px;
+			flex-wrap: wrap;
+			align-content: center;
 		}
 
 		form > .fields {
@@ -701,8 +703,13 @@ input, select, textarea {
 	}
 	
 	.header-button {
-		margin-left:19px;
+		margin-left: 19px;
 		border-radius: 5px;
+		/* justify-content: center; */
+		/* display: flex; */
+		flex-wrap: wrap;
+		align-content: center;
+	
 	}
 
 	input[type="checkbox"],
@@ -1506,7 +1513,10 @@ input, select, textarea {
 	body {
 		padding: 0 0 4em 0;
 	}
-
+    
+	.headerBar {
+		height: 60px;
+	}
 
 	#header {
 		-moz-transform: translateY(0);
@@ -1655,8 +1665,8 @@ input, select, textarea {
 	}
 
 		#columns {
-			column-width: 250px;
-			column-gap: 15px;
+			column-width: 210px;
+			column-gap: 16px;
 			/* border: 5px solid green; */
 		}
 
@@ -1672,9 +1682,9 @@ input, select, textarea {
 			position: relative;
 			display: inline-block;
 			margin:0;
-			box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+			box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 			margin-bottom:30px;
-			border-radius: 8px;
+			border-radius: 15px;
 
 		}
 
@@ -2123,3 +2133,32 @@ input, select, textarea {
 		#footer .copyright a {
 			color: inherit;
 		}
+
+		.createButton {
+			width: 350px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.mainButton {
+			justify-content:center ;
+			display: flex;
+			padding: 15px;
+			height: 45px;
+			text-align: center;
+			border-radius: 5px;
+			border:1px solid #6ec985;
+			align-content: center;
+			flex-wrap: wrap;
+			color: #21a089;
+			font-weight: 500;
+			font-size: 15px;
+			transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+		}
+
+		.mainButton:hover {
+			border: 2px solid #35a58e;
+			color:#0c3d34;
+			cursor:pointer
+		}	
+		
