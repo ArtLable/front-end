@@ -1510,15 +1510,30 @@ input, select, textarea {
 
 /* Header */
 
+	.navbar {
+		height: 80px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}	
+
 	body {
-		padding: 0 0 4em 0;
+		/* padding: 0 0 4em 0; */
+		padding-top: 30px;
 	}
     
 	.headerBar {
-		height: 60px;
+		height: 80px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
 	}
 
-	#header {
+	/* #header {
 		-moz-transform: translateY(0);
 		-webkit-transform: translateY(0);
 		-ms-transform: translateY(0);
@@ -1540,7 +1555,7 @@ input, select, textarea {
 		user-select: none;
 		width: 100%;
 		z-index: 10002;
-	}
+	} */
 
 		body.is-preload #header {
 			-moz-transform: translateY(4em);
