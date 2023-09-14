@@ -9,7 +9,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={ <Layout /> } />
-          <Route path="/Login" element={ <Login /> } />
         </Routes>
       </Router>
     </div>

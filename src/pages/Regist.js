@@ -6,7 +6,7 @@ const User = {
   pw: 'test2323@@@'
 }
 
-function Login({isOpen, closeModal}) {
+function Regist({isOpen, closeModal}) {
 
   const [email, setEmail] = useState('');
   const [pw, setPw] = useState("");
@@ -57,7 +57,7 @@ function Login({isOpen, closeModal}) {
       <div className="loginPage" style={{display:isOpen?"block":"none",}}>
         <div className="loginModal">
           <div className="titleWrap">
-            LOGIN
+            SIGN UP
           </div>
           <div className="contentWrap">
             <div className="inputTitle">이메일 주소</div>
@@ -76,7 +76,6 @@ function Login({isOpen, closeModal}) {
                 )
               }
             </div>
-
             <div style={{ marginTop: "26px" }}className="inputTitle">비밀번호</div>
             <div className="inputWrap">
               <input
@@ -99,9 +98,6 @@ function Login({isOpen, closeModal}) {
             <button onClick={onClickConfirmButton} disabled={notAllow} className='loginButton'> 
               확인
             </button>
-            <button className='buttonBox'> 
-              회원가입
-            </button>
             <button onClick={closeModal} className='buttonBox'> 
               닫기
             </button>
@@ -111,4 +107,4 @@ function Login({isOpen, closeModal}) {
   )
 }
 
-export default Login
+export default Regist
