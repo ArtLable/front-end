@@ -1,26 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../layout/Resources/assets/css/fontawesome-all.min.css';
 import '../layout/Resources/assets/css/main.css';
 import '../layout/Resources/assets/css/noscript.css';
 import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../bootstrap.css';
-import Login from '../pages/Login';
+import Example from '../pages/Example';
 
 export default function Main() {
-
-	const [isCardOpen, setIsCardOpen] = useState(false);
-	const [selectedImage, setSelectedImage] = useState(null);
-
-	const openCardModal = (imageUrl) => {
-		setSelectedImage(imageUrl);
-		setIsCardOpen(true);
-	}	
-
-  	const closeCardModal = () => {
-		setSelectedImage(null);
-		setIsCardOpen(false);
-	}	
 
 	const imageUrls = [ 
 	"https://r1.community.samsung.com/t5/image/serverpage/image-id/1230422i353491C53F342C13/image-dimensions/2500?v=v2&px=-1",
@@ -78,76 +65,43 @@ export default function Main() {
 	"https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202211/24/catlab/20221124080217131azjg.jpg",
 	"https://s1.best-wallpaper.net/wallpaper/m/1807/Five-husky-puppies-blue-eyes-dog_m.jpg",
 	"https://downloadwap.com/thumbs2/wallpapers/p2ls/new/37/MUDmvWPFt9.jpg",
-	"https://thumb.ac-illust.com/31/31bf355c5d1d5ef36902e72620450e2f_t.jpeg"]
+	"https://thumb.ac-illust.com/31/31bf355c5d1d5ef36902e72620450e2f_t.jpeg"];
 
-  return (
-    <div>
-      <Container>
-      <body className="is-preload">
+	const [selectedImage, setSelectedImage] = useState(null);
 
-			<div id="wrapper">
+	const openCardModal = (imageUrl) => {
+		setSelectedImage(imageUrl);
+	}
+  
+	const closeCardModal = () => {
+		setSelectedImage(null);
+	}
 
-					<div id="columns">
-						{imageUrls.map((imageUrl, index)=> (
-							<figure className="thumb" key={index}>
-								<a href="" className="image">
-									<img src={imageUrl} alt="" onClick={() => openCardModal(imageUrl)} />
-									{isCardOpen && (<Login isOpen={isCardOpen} closeModal={closeCardModal} imageUrl={selectedImage} />)}
-								</a>
-								<figcaption>#귀여운 #멍뭉이 #사진</figcaption>
-							</figure>
-						))}
-					</div>
-
-					{/* <footer id="footer" className="panel">
-						<div className="inner split">
-							<div>
-								<section>
-									<h2>Magna feugiat sed adipiscing</h2>
-									<figcaption>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum.</figcaption>
-								</section>
-								<section>
-									<h2>Follow me on ...</h2>
-									<ul className="icons">
-										<li><a href="#" className="icon brands fa-twitter"><a className="label">Twitter</a></a></li>
-										<li><a href="#" className="icon brands fa-facebook-f"><a className="label">Facebook</a></a></li>
-										<li><a href="#" className="icon brands fa-instagram"><a className="label">Instagram</a></a></li>
-										<li><a href="#" className="icon brands fa-github"><a className="label">GitHub</a></a></li>
-										<li><a href="#" className="icon brands fa-dribbble"><a className="label">Dribbble</a></a></li>
-										<li><a href="#" className="icon brands fa-linkedin-in"><a className="label">LinkedIn</a></a></li>
-									</ul>
-								</section>
-								<figcaption className="copyright">
-									&copy; Unttled. Design: <a href="http://html5up.net">HTML5 UP</a>.
-								</figcaption>
-							</div>
-							<div>
-								<section>
-									<h2>Get in touch</h2>
-									<form method="post" action="#">
-										<div className="fields">
-											<div className="field half">
-												<input type="text" name="name" id="name" placeholder="Name" />
-											</div>
-											<div className="field half">
-												<input type="text" name="email" id="email" placeholder="Email" />
-											</div>
-											<div className="field">
-												<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
-											</div>
-										</div>
-										<ul className="actions">
-											<li><input type="submit" value="Send" className="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-							</div>
-						</div>
-					</footer> */}
-			</div>
-	</body>
-      </Container>
-    </div>
-  )
-}
+	
+	return (
+		<div>
+		  <Container>
+			<body className="is-preload">
+			  	<div className="createButton">
+					<div className="mainButton">웹소설 삽화 생성</div>
+					<div className="mainButton"> 나의 그림체 학습하기</div>
+				</div>
+			  <div id="wrapper">
+				<div id="columns">
+				  {imageUrls.map((imageUrl, index) => (
+					<figure className="thumb" key={index}>
+					  <a href="#" className="image" onClick={(e) => {e.preventDefault(); openCardModal(imageUrl);}}>
+						<img src={imageUrl} alt="" />
+					  </a>
+					</figure>
+				  ))}
+				</div>
+				{selectedImage && (
+  					<Example isOpen={true} closeModal={closeCardModal} card={selectedImage} />
+				)}
+			  </div>
+			</body>
+		  </Container>
+		</div>
+	  );
+	}

@@ -106,6 +106,7 @@ figure, figcaption {
 
 .container {
 	max-width: 1620px;
+	padding: 50px;
 	
 }
 
@@ -1524,14 +1525,6 @@ input, select, textarea {
 		padding-top: 30px;
 	}
     
-	.headerBar {
-		height: 80px;
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 1;
-	}
 
 	/* #header {
 		-moz-transform: translateY(0);
@@ -1680,8 +1673,8 @@ input, select, textarea {
 	}
 
 		#columns {
-			column-width: 210px;
-			column-gap: 16px;
+			column-width: 220px;
+			column-gap: 20px;
 			/* border: 5px solid green; */
 		}
 
@@ -2149,31 +2142,33 @@ input, select, textarea {
 			color: inherit;
 		}
 
-		.createButton {
+		/* .createButton {
 			width: 350px;
 			display: flex;
 			justify-content: space-between;
-		}
+		} */
 
 		.mainButton {
-			justify-content:center ;
+			margin-bottom: 20px;
 			display: flex;
 			padding: 15px;
-			height: 45px;
+			/* height: 45px; */
 			text-align: center;
 			border-radius: 5px;
-			border:1px solid #6ec985;
-			align-content: center;
-			flex-wrap: wrap;
-			color: #21a089;
+			/* border: 2px solid #6ec985; */
+			color: #030f0dc9;
 			font-weight: 500;
-			font-size: 15px;
+			background-color: #c4c0c067;
+			font-size: 22px;
 			transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+			justify-content: center;
+			letter-spacing: 2px;
+			font-family: "Gowun Dodum";
 		}
 
 		.mainButton:hover {
-			border: 2px solid #35a58e;
-			color:#0c3d34;
+			color:#ffffff;
+			background-color: #2ea68095;
 			cursor:pointer
 		}	
 		

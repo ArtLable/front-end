@@ -3987,10 +3987,10 @@ textarea.form-control-lg {
 .navbar > .container-xl,
 .navbar > .container-xxl {
   display: flex;
-  flex-wrap: inherit;
-  align-items: center;
   justify-content: space-between;
-  background-color: #f8f9fa;
+  font-family: "Oxygen";
+  letter-spacing: 2px;
+  font-weight: bolder;
 }
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
