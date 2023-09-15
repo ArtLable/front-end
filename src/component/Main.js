@@ -83,8 +83,8 @@ export default function Main() {
 		  <Container>
 			<body className="is-preload">
 			  	<div className="createButton">
-					<div className="mainButton">웹소설 삽화 생성</div>
-					<div className="mainButton"> 나의 그림체 학습하기</div>
+					{/* <div className="mainButton">웹소설 삽화 생성</div>
+					<div className="mainButton"> 나의 그림체 학습하기</div> */}
 				</div>
 			  <div id="wrapper">
 				<div id="columns">

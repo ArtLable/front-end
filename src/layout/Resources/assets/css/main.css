@@ -2148,14 +2148,28 @@ input, select, textarea {
 			justify-content: space-between;
 		} */
 
-		.mainButton {
+		/* .mainButton {
 			margin-bottom: 20px;
 			display: flex;
 			padding: 15px;
-			/* height: 45px; */
 			text-align: center;
 			border-radius: 5px;
-			/* border: 2px solid #6ec985; */
+			color: #030f0dc9;
+			font-weight: 500;
+			background-color: #c4c0c067;
+			font-size: 22px;
+			transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
+			justify-content: center;
+			letter-spacing: 2px;
+			font-family: "Gowun Dodum";
+		} */
+		
+		.mainButton {
+			margin: -100px;
+			display: flex;
+			padding: 5px 20px 5px 20px;
+			text-align: center;
+			border-radius: 5px;
 			color: #030f0dc9;
 			font-weight: 500;
 			background-color: #c4c0c067;

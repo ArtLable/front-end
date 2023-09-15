@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import HeartButton from '../HeartImg/HeartButton';
 
 const CardItem = ({ card }) => {
   const { image } = card || {};
+  // const [ like, setLike ] = useState(false);
 
-  console.log("image:", image);
+  // const fetchData = async () => {
+  //   const res = await axios.get()
+  //   if (res.data.type === 'Liked') setLike(true)
+  // }
+  // useEffect( () => {
+  //   fetchData()
+  // }, []);
+
+  // const toggleLike = async (e) => {
+  //   const res = await axios.post()
+  //   setLike(!like)
+  // };
 
   return (
     <div className="CardItemBlock">
       <div className="sampleCard">
-        {/* <img className="likeIcon" src="../like_5.png" /> */}
-        <img src={image} alt={image} />
+        <HeartButton className="likeIcon" />
+        <img className="sampleCardImg" src={image} alt={image} />
       </div>
       <div className="sampleDetailBlock">
         <div className="detailTitle">
