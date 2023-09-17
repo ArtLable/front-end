@@ -293,9 +293,6 @@ input, select, textarea {
 		font-size: 0.7em;
 	}
 
-	NavDropdown.Divider {
-		
-	}
 
 	@media screen and (max-width: 736px) {
 
@@ -677,7 +674,6 @@ input, select, textarea {
 			display: none;
 		}
 
-	input[type="text"],
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
@@ -692,16 +688,14 @@ input, select, textarea {
 
 		border: 1px solid #34363b2c;
 	}
-	.search {
-	}
 
 	.d-flex {
 		margin-left: 20px;
 	}
 
-	textarea {
+	/* textarea {
 		padding: 0.75em 1em;
-	}
+	} */
 	
 	.header-button {
 		margin-left: 19px;
@@ -756,7 +750,7 @@ input, select, textarea {
 
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
-				background: #34363b;
+				/* background: #34363b; */
 				content: '';
 				display: inline-block;
 				font-size: 0.8em;
@@ -1690,27 +1684,15 @@ input, select, textarea {
 			position: relative;
 			display: inline-block;
 			margin:0;
-			box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-			margin-bottom:30px;
+			box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+			margin-bottom: 35px;
 			border-radius: 15px;
 
 		}
 
-			/* #main .thumb:after {
-				background-image: -moz-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
-				background-image: -webkit-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
-				background-image: -ms-linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
-				background-image: linear-gradient(to top, rgba(10,17,25,0.35) 5%, rgba(10,17,25,0) 35%);
-				pointer-events: none;
-				background-size: contain;
-				content: '';
-				display: block;
-				height: 100%;
-				left: 0;
-				position: absolute;
-				top: 0;
-				width: 100%;
-			} */
+		#columns .thumb > .image img:hover {
+			filter: brightness(0.7);
+			}
 
 			#columns .thumb > .image {
 				-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -1731,6 +1713,7 @@ input, select, textarea {
 				width: 100%;
 				height: auto;
 				display: block;
+				filter: brightness(1);
 			
 			}
 

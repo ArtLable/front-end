@@ -22,27 +22,33 @@ const CardItem = ({ card }) => {
   return (
     <div className="CardItemBlock">
       <div className="sampleCard">
-        <HeartButton className="likeIcon" />
+        {/* <HeartButton className="likeIcon" /> */}
         <img className="sampleCardImg" src={image} alt={image} />
       </div>
       <div className="sampleDetailBlock">
+      <form className="">
+      <button type="submit" className="saveButton">save</button>
+      </form>
         <div className="detailTitle">
-          여러분 이 사랑스러운 강아지좀 봐주세요!!!
+          짜잔 제가 만든 웹소설 삽화에요 완전 맘에들어!!!
         </div>
         <div className="detail">
-          귀여운 강아지가 뜨거운 햇살아래 비치룩을 입고 선글라스를 끼고 날 바라보고있는거 같죠? 너무 귀엽다 정말~_~ 사랑스럽지않나용?? 꺅~
+          너무 느낌있게 잘 만들어지지 않았나요? 제가 생각한 이미지랑 정말 찰떡이에요!!!
         </div>
         <div className="detail">
-          #프렌치 불독 #비치룩 #선글라스 #귀요미
+          #웹소설 #여기서 #살아남기 #어려울걸?
         </div>
         <div className='commentTitle'>
           댓글
         </div>
         <div className='commentContent'>
-          진짜 너무 귀엽네요 앉아있는것도 ㅋ_ㅋ
+          kej231 : 우와 그림체 진쨔 너무 이쁘게 나왔네요~
+          toonlove : 멋지네요~~ ~좋아요 누르고 갑니다!!
+          닉네임못정함 : 그림체 보소 진짜 러블리하다
         </div>
         <div className='commentWrite'>
           <form className="d-flex">
+        <HeartButton className="likeIcon" />
             <input class="form-control me-sm-2 search" type="" placeholder="댓글을 작성해 주세요"/>
             <button type="submit" className="">작성</button>
           </form>

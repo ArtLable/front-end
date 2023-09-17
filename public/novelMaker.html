@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="novelBlock">
+            <div class="novelName">
+                <button>추가 +</button>
+            </div>
+        <div class="novelInfoBlock">  
+            <form method="post">
+            <fieldset>
+                <legend></legend>
+                <div class="novelInfo">
+                    <table>
+                    <tr>
+                        <th><label for="novelname">소설 이름</label></th>
+                        <td><input type="text" name="" id="novelname"></td>    
+                    </tr>
+                    <tr>
+                        <th><label for="charname">캐릭터 이름</label></th>
+                        <td><input type="text" name="" id="charname"></td>    
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="novelplot">캐릭터 묘사</label>
+                        </th>
+                        <td>
+                            <textarea name="" id="novelplot" cols="40" rows="5" spellcheck="false"></textarea>
+                        </td>       
+                    </tr>
+                    <tr>
+                        <th><label for="novelgenre" id="checkbox">장르 선택</label></th>
+                            <td id="check">
+                                <input type="checkbox" name="" id="genre1">
+                                <label for="genre1"><span>액션</span></label>
+                                
+                                <input type="checkbox" name="" id="genre2">
+                                <label for="genre2"><span>로맨스</span></label>
+                                
+                                <input type="checkbox" name="" id="genre3">
+                                <label for="genre3"><span>판타지</sapn></label>
+                                </br>
+                                </br>
+                                <input type="checkbox" name="" id="genre4">
+                                <label for="genre4"><span>공포</span></label>
+                            
+                                <input type="checkbox" name="" id="genre5">
+                                <label for="genre5"><span>드라마</span></label>
+
+                                <input type="checkbox" name="" id="genre6">
+                                <label for="genre6"><span>코미디</span></label>
+                            </td>    
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="novelplot">전체 줄거리</label>
+                        </th>
+                        <td>
+                            <textarea name="" id="novelplot" cols="40" rows="5" spellcheck="false"></textarea>
+                        </td>    
+                    </tr>
+                    </table>
+                </div>
+                <div class="submitButton">
+                    <input type="submit" value="저장">
+                    <input type="reset" value="취소">
+                    <input type="submit" value="다음">
+                </div>
+            </fieldset>
+            </form>
+        </div>
+        </div>
+    </div>        
+</body>
+</html>
+

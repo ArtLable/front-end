@@ -22,8 +22,8 @@ function Header() {
       <Navbar bg="light" expand="lg">
         <Container className="headerBar">
           <Navbar.Brand><Link to="/" className="nav-link">TOONMAKER</Link></Navbar.Brand>
-          <div className="mainButton">웹소설 삽화 생성</div>
-					<div className="mainButton"> 나의 그림체 학습하기</div>
+          <div className="mainButton">웹소설 삽화</div>
+					<div className="mainButton"> 웹툰 그림체 학습</div>
             <Nav className="ml-auto">
               <button onClick={openLoginModal} className="header-button">LOGIN</button>
               {isLoginOpen && (<Login isOpen={isLoginOpen} closeModal={closeLoginModal}/>)}

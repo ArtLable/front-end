@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import HeartImg from "./heartB.png"
-import EmptyHeartImg from "./heartE.png"
+import HeartImg from "./icons8R.png"
+import EmptyHeartImg from "./icons8B.png"
 
 
 // const HeartButton = ({Like, onClck}) => {
@@ -19,15 +19,17 @@ class HeartButton extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isChecked: false,
-      notice: '',
+      isChecked: localStorage.getItem('isChecked') === 'true',
+      notice: '좋아요 3개',
     };
   }
 
   onClick = () => {
     this.setState((prevState) => ({
       isChecked: !prevState.isChecked,
-    }));
+    }), () => {
+      localStorage.setItem('isChecked', this.state.isChecked);
+    });
   };
 
   render() {
