@@ -11,8 +11,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={ <Layout /> } />
-          <Route path="/novel" element={ <NovelMaker /> } />
-          <Route path="/novelC" element={ <NovelCharacter /> } />
+          <Route path="/novel-maker" element={<NovelMaker />} />
+          <Route path="/novel-character" element={<NovelCharacter />} />
         </Routes>
       </Router>
     </div>

@@ -4,7 +4,7 @@ import '../bootstrap.css';
 import '../pages/NovelCharacter.css';
 import { useNavigate } from 'react-router-dom'; // useNavigate를 가져옵니다.
 
-function NovelCharacter() {
+function NovelCharacter({ characterName, characterImageUrl }) {
   const navigate = useNavigate(); // useNavigate를 초기화합니다.
 
   const handleAddCharacter = () => {
@@ -13,9 +13,14 @@ function NovelCharacter() {
   };
 
   return (
-    <div>
-      {/* ... */}
-      <button onClick={handleAddCharacter}>캐릭터 추가</button>
+    <div className="container">
+      <div>
+        <button onClick={handleAddCharacter}>캐릭터 추가</button>
+      </div>
+      <div className="novelCharacterContainer">
+        <img src={characterImageUrl} alt={characterName} className="characterImage" />
+        <div className="characterName">{characterName}</div>
+      </div>
     </div>
   );
 }
