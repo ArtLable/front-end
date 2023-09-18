@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Login from './pages/Login';
 import NovelMaker from './pages/NovelMaker';
+import NovelCharacter from './pages/NovelCharacter';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <Layout /> } />
           <Route path="/novel" element={ <NovelMaker /> } />
+          <Route path="/novelC" element={ <NovelCharacter /> } />
         </Routes>
       </Router>
     </div>

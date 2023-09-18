@@ -144,7 +144,7 @@
 	}
 
 	input[type="checkbox"],
-	input[type="radio"], {
+	input[type="radio"] {
 		@include vendor('appearance', 'none');
 		display: block;
 		float: left;
@@ -152,6 +152,7 @@
 		opacity: 0;
 		width: 1em;
 		z-index: -1;
+	
 
 		& + label {
 			@include icon(false, solid);
