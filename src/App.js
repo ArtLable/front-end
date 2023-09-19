@@ -1,9 +1,10 @@
 import Layout from './layout/Layout';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './component/Modal/LoginModal';
+// import Login from './component/Modal/LoginModal';
 import NovelMaker from './pages/NovelMaker';
 import NovelCharacter from './pages/NovelCharacter';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={ <Layout /> } />
           <Route path="/novel-maker" element={<NovelMaker />} />
           <Route path="/novel-character" element={<NovelCharacter />} />
+          <Route path="/Login" element={<Login />} />
         </Routes>
       </Router>
     </div>
