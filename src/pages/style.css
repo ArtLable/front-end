@@ -1,0 +1,309 @@
+.novelContainer {
+  display: flex;
+  padding: 30px;
+  margin-top: 38px;
+  margin-right: 70px;
+  justify-content: center;
+  /* margin-left: -115px; */
+}
+
+#novelTable1 {
+  width: 620px;
+  /* border: 2px solid red; */
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+
+  table th {
+    padding: 0;
+    vertical-align: middle;
+  }
+
+  .novelForm {
+    text-align: end;
+    /* border: 2px solid rgb(37, 203, 221); */
+    width: 100px;
+  }
+
+  #novelplot {
+    margin: 5px;
+    width: 95%;
+  }
+
+  td {
+    border: 1px solid rgba(39, 182, 75, 0.724);
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  input[type="text"] {
+    margin: 5px;
+    /* border: 2px solid blue; */
+    width: 400px;
+    outline: none;
+    
+}
+
+  input[type="checkbox"] + label {
+    display: inline-block;
+    font-weight: 500;
+    margin-left: 30px;
+    width: 120px;
+    line-height: 15px;
+    color: rgba(6, 63, 8, 0.62);
+    font-size: medium;
+  }
+
+label {
+    /* border: 2px solid rgb(88, 52, 42); */
+    width: 110px;
+    font-weight: 600;
+    color: rgba(7, 85, 10, 0.742);
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: medium;
+}
+input#genre1 {
+  display:none;
+  }
+
+input#genre1 + label {
+  cursor:pointer;
+ }
+
+input#genre1 + label > span {
+  vertical-align: middle;
+  padding-left: 5px;
+ }
+
+  /* label:before에 체크하기 전 상태 CSS */
+  input#genre1 + label:before {
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    border:2px solid #189126b4;
+    border-radius: 4px;
+    vertical-align:middle;
+    }
+    
+  /* label:before에 체크 된 상태 CSS */  
+  input#genre1:checked + label:before {
+    content:"";
+    background-color:#189126b4;
+    border-color:#189126b4;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    }
+input#genre2 {
+    display:none;
+    }
+  
+  input#genre2 + label {
+    cursor:pointer;
+   }
+  
+  input#genre2 + label > span {
+    vertical-align: middle;
+    padding-left: 5px;
+   }
+  
+  /* label:before에 체크하기 전 상태 CSS */
+  input#genre2 + label:before {
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    border:2px solid #189126b4;
+    border-radius: 4px;
+    vertical-align:middle;
+    }
+    
+  /* label:before에 체크 된 상태 CSS */  
+  input#genre2:checked + label:before {
+    content:"";
+    background-color:#189126b4;
+    border-color:#189126b4;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    }
+input#genre3 {
+    display:none;
+    }
+  
+  input#genre3 + label {
+    cursor:pointer;
+   }
+  
+  input#genre3 + label > span {
+    vertical-align: middle;
+    padding-left: 5px;
+   }
+  
+  /* label:before에 체크하기 전 상태 CSS */
+  input#genre3 + label:before {
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    border:2px solid #189126b4;
+    border-radius: 4px;
+    vertical-align:middle;
+    }
+    
+  /* label:before에 체크 된 상태 CSS */  
+  input#genre3:checked + label:before {
+    content:"";
+    background-color:#189126b4;
+    border-color:#189126b4;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    }
+
+input#genre4 {
+    display:none;
+    }
+  
+  input#genre4 + label {
+    cursor:pointer;
+   }
+  
+  input#genre4 + label > span {
+    vertical-align: middle; 
+    padding-left: 5px;
+   }
+  
+  /* label:before에 체크하기 전 상태 CSS */
+  input#genre4 + label:before {
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    border:2px solid #189126b4;
+    border-radius: 4px;
+    vertical-align:middle;
+    }
+    
+  /* label:before에 체크 된 상태 CSS */  
+  input#genre4:checked + label:before {
+    content:"";
+    background-color:#189126b4;
+    border-color:#189126b4;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    }
+input#genre5 {
+    display:none;
+    }
+  
+  input#genre5 + label {
+    cursor:pointer;
+   }
+  
+  input#genre5 + label > span {
+    vertical-align: middle;
+    padding-left: 5px;
+   }
+  
+  /* label:before에 체크하기 전 상태 CSS */
+  input#genre5 + label:before {
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    border:2px solid #189126b4;
+    border-radius: 4px;
+    vertical-align:middle;
+    }
+    
+  /* label:before에 체크 된 상태 CSS */  
+  input#genre5:checked + label:before {
+    content:"";
+    background-color:#189126b4;
+    border-color:#189126b4;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    }
+input#genre6 {
+    display:none;
+    }
+  
+  input#genre6 + label {
+    cursor:pointer;
+   }
+  
+  input#genre6 + label > span {
+    vertical-align: middle;
+    padding-left: 5px;
+   }
+  
+  /* label:before에 체크하기 전 상태 CSS */
+  input#genre6 + label:before {
+    content:"";
+    display:inline-block;
+    width:17px;
+    height:17px;
+    border:2px solid #189126b4;
+    border-radius: 4px;
+    vertical-align:middle;
+    }
+    
+  /* label:before에 체크 된 상태 CSS */  
+  input#genre6:checked + label:before {
+    content:"";
+    background-color:#189126b4;
+    border-color:#189126b4;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    }
+
+.novelName {
+    /* border: 2px solid red; */
+    width: 300px;
+    text-align: center;
+    margin: 50px;
+}
+
+.novelInfoBlock {
+    width: 1920px;
+    /* border: 2px solid blue; */
+    margin: 20px;
+}
+
+.novelBlock {
+    justify-content: center;
+    width: 800px;
+    /* border: 2px solid chartreuse; */
+    display: flex;
+}
+
+ /* button {
+    margin: 30px;
+    border: 2px solid #14711fc5;
+    color: #0f5517d2;
+}  */
+/* 
+.container {
+    display: flex;
+    width: 1500px;
+    justify-content: center;
+    border: 2px solid hotpink;
+} */
+
+input + input {
+    margin-left: 10px;
+}
+
+.submitButton {
+  text-align: end;
+  margin-right: 10px;
+}
+
+fieldset {
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.207);
+    border-radius: 10px;
+}
+

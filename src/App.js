@@ -2,6 +2,8 @@ import Layout from './layout/Layout';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Login from './pages/Login';
+import NovelMaker from './pages/NovelMaker';
+import NovelCharacter from './pages/NovelCharacter';
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={ <Layout /> } />
+          <Route path="/novel-maker" element={<NovelMaker />} />
+          <Route path="/novel-character" element={<NovelCharacter />} />
         </Routes>
       </Router>
     </div>
