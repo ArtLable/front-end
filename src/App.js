@@ -1,7 +1,7 @@
 import Layout from './layout/Layout';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './pages/Login';
+import Login from './component/Modal/LoginModal';
 import NovelMaker from './pages/NovelMaker';
 import NovelCharacter from './pages/NovelCharacter';
 

@@ -1,7 +1,6 @@
 import React from 'react'
-import Header from '../component/Header';
 import '../bootstrap.css';
-import '../pages/NovelCharacter.css';
+import '../styles/NovelCharacter.css';
 import { useNavigate } from 'react-router-dom'; // useNavigate를 가져옵니다.
 
 function NovelCharacter({ characterName, characterImageUrl }) {

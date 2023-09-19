@@ -1,16 +1,17 @@
-import { React, useEffect, useState } from 'react'
-import './pages.css';
+import React, { useEffect, useState, useRef } from 'react'
+import '../../styles/pages.css';
+import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import axios from 'axios';
 
-const User = {
-  email: 'test@example.com',
-  pw: 'test2323@@@'
-}
 
-function Regist({isOpen, closeModal}) {
+function LoginModal({isOpen, closeModal}) {
 
+  const formRef = useRef();
+  const [cookies, setCookie] = useCookies(['accessToken']);
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [pw, setPw] = useState("");
-
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
@@ -37,14 +38,26 @@ function Regist({isOpen, closeModal}) {
     }
   }
 
+  const login = (e) => {
+    e.preventDefault();
+    axios
+            .post('/authentication/login', {
+                memberEmail: formRef.current.memberEmail.value,
+                memberPwd: formRef.current.memberPwd.value,
+            })
+            .then((res) => {
+                setCookie('accessToken', res.data.accessToken);
+            });
+  };
+
   const onClickConfirmButton = () => {
-    if(email === User.email && pw === User.pw) {
-      alert('로그인에 성공했습니다.');
+    if (emailValid && pwValid) {
+      login();
     } else {
       alert('등록되지 않은 회원입니다.')
     }
-  }
-
+  };
+  
   useEffect(() => {
     if(emailValid && pwValid) {
       setNotAllow(false);
@@ -56,9 +69,7 @@ function Regist({isOpen, closeModal}) {
   return (
       <div className="loginPage" style={{display:isOpen?"block":"none",}}>
         <div className="loginModal">
-          <div className="titleWrap">
-            SIGN UP
-          </div>
+          <div className="titleWrap">LOGIN</div>
           <div className="contentWrap">
             <div className="inputTitle">이메일 주소</div>
             <div className="inputWrap">
@@ -76,6 +87,7 @@ function Regist({isOpen, closeModal}) {
                 )
               }
             </div>
+
             <div style={{ marginTop: "26px" }}className="inputTitle">비밀번호</div>
             <div className="inputWrap">
               <input
@@ -93,18 +105,22 @@ function Regist({isOpen, closeModal}) {
               }
             </div>
           </div>
-
+            <div>
+              <form ref={formRef} onSubmit={login}></form>
+            </div>
           <div className="buttonBox">
             <button onClick={onClickConfirmButton} disabled={notAllow} className='loginButton'> 
               확인
             </button>
+            <button className='buttonBox'>회원가입</button>
             <button onClick={closeModal} className='buttonBox'> 
               닫기
             </button>
           </div>
         </div>
       </div>
+      
   )
 }
 
-export default Regist
+export default LoginModal
