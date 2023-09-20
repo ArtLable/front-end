@@ -49,7 +49,7 @@ function NovelMaker() {
       <div className="novelContainer">
         <div className="novelBlock">
             <div className="novelName">
-                <button onClick={''}>추가</button>
+                <button onClick={''}>소설 추가</button>
             </div>
         <div className="novelInfoBlock">  
             <form>
@@ -62,7 +62,7 @@ function NovelMaker() {
                             <th><label htmlFor="novelname" className='novelForm'>소설 이름</label></th>
                             <td><input type="text" name="" id="novelname" defaultValue={novelInfo.novelName}/></td>    
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <th><label htmlFor="charname" className='novelForm'>캐릭터 이름</label></th>
                             <td><input type="text" name="" id="charname" defaultValue={novelInfo.charName} /></td>    
                         </tr>
@@ -88,7 +88,7 @@ function NovelMaker() {
                             <td>
                                 <textarea name="" id="novelplot" cols="40" rows="4" spellCheck="false" defaultValue={novelInfo.description}></textarea>
                             </td>       
-                        </tr>
+                        </tr> */}
                         <tr>
                             <th><label htmlFor="novelgenre" id="checkbox" className='novelForm'>장르 선택</label></th>
                                 <th>
@@ -123,6 +123,7 @@ function NovelMaker() {
                 </div>
                 <div className="submitButton">
                     <input type="reset" value="취소" />
+                    <input type="submit" value="저장" />
                     <input type="submit" value="다음" onClick={handleCreateCharacter}/>
                 </div>
             </fieldset>

@@ -1,20 +1,17 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState} from 'react'
 import '../../styles/pages.css';
-import { useNavigate } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
+import Cookies from 'js-cookie'; 
 import axios from 'axios';
 
 
-function LoginModal({isOpen, closeModal}) {
+function LoginModal({isOpen, closeModal,  onLoginSuccess}) {
 
-  const formRef = useRef();
-  const [cookies, setCookie] = useCookies(['accessToken']);
-  const navigate = useNavigate();
   const [email, setEmail] = useState('');
-  const [pw, setPw] = useState("");
+  const [password, setPassword] = useState("");
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
+  const [error, setError] = useState(null);
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -29,34 +26,55 @@ function LoginModal({isOpen, closeModal}) {
   }
 
   const handlePw= (e) => {
-    setPw(e.target.value);
+    setPassword(e.target.value);
     const rePass =  /^[a-zA-Z\\d`~!@#$%^&*()-_=+]{8,24}$/;
-    if(rePass.test(pw)) {
+    if(rePass.test(password)) {
       setPwValid(true);
     } else {
       setPwValid(false);
     }
   }
 
-  const login = (e) => {
-    e.preventDefault();
-    axios
-            .post('/authentication/login', {
-                memberEmail: formRef.current.memberEmail.value,
-                memberPwd: formRef.current.memberPwd.value,
-            })
-            .then((res) => {
-                setCookie('accessToken', res.data.accessToken);
-            });
-  };
+  const onClickConfirmButton = async (event) => {
+    if (event) {
+    event.preventDefault();
 
-  const onClickConfirmButton = () => {
-    if (emailValid && pwValid) {
-      login();
-    } else {
-      alert('등록되지 않은 회원입니다.')
+    const apiUrl = 'http://127.0.0.1:8080/api/v1/authentication/login';
+    const requestData = {
+      memberEmail: email,
+      memberPwd: password,
+    };
+
+    try {
+      const response = await axios.post(apiUrl, requestData, {
+        
+        headers: {
+          'Accept': 'application/json;charset=UTF-8',
+          'Content-Type': 'application/json;charset=UTF-8',
+        },
+      });
+
+      const data = response.data;
+      const accessToken = data.authority[0].accessToken;
+// console.log('넘어온 데이터', data);
+// console.log('넘어온 데이터', data.memberNickname);
+      // localStorage.setItem('accessToken', accessToken);
+
+      // 액세스 토큰을 쿠키에 저장
+      Cookies.set('memberNickname2', data.memberNickname);
+      Cookies.set('accessToken', accessToken);
+
+      setError(null);
+
+      closeModal();
+
+      onLoginSuccess();
+
+    } catch (error) {
+      console.error('로그인 오류:', error);
+      setError('로그인에 실패했습니다.');
     }
-  };
+  }};
   
   useEffect(() => {
     if(emailValid && pwValid) {
@@ -68,6 +86,7 @@ function LoginModal({isOpen, closeModal}) {
 
   return (
       <div className="loginPage" style={{display:isOpen?"block":"none",}}>
+        <form onSubmit={onClickConfirmButton}>
         <div className="loginModal">
           <div className="titleWrap">LOGIN</div>
           <div className="contentWrap">
@@ -94,30 +113,28 @@ function LoginModal({isOpen, closeModal}) {
                 type='password' 
                 className='input' 
                 placeholder='영문,숫자,특수문자 포함 8자 이상'
-                value={pw}
+                value={password}
                 onChange={handlePw}/>
             </div>  
             <div className="errorMessageWrap">
               {
-                !pwValid && pw.length > 0 && (
+                !pwValid && password.length > 0 && (
                   <div>영문,숫자,특수문자 포함 8자 이상을 입력해주세요.</div>
                 )
               }
             </div>
           </div>
-            <div>
-              <form ref={formRef} onSubmit={login}></form>
-            </div>
           <div className="buttonBox">
-            <button onClick={onClickConfirmButton} disabled={notAllow} className='loginButton'> 
-              확인
-            </button>
+          <button onClick={(event) => onClickConfirmButton(event)} disabled={notAllow} className='loginButton'> 
+            확인
+          </button>
             <button className='buttonBox'>회원가입</button>
             <button onClick={closeModal} className='buttonBox'> 
               닫기
             </button>
           </div>
         </div>
+      </form>  
       </div>
       
   )

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Cookies from 'js-cookie'; // js-cookie 라이브러리 임포트
+import Cookies from 'js-cookie'; 
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -39,6 +42,9 @@ function Login() {
       Cookies.set('accessToken', accessToken);
 
       setError(null);
+
+      navigate('/');
+
     } catch (error) {
       console.error('로그인 오류:', error);
       setError('로그인에 실패했습니다.');

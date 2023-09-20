@@ -2183,3 +2183,6 @@ input, select, textarea {
 			cursor:pointer
 		}	
 		
+.header-welcome {
+	margin-top: 8px;
+}
