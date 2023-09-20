@@ -61,7 +61,7 @@ function Header() {
       <Navbar bg="light" expand="lg">
         <Container className="headerBar">
           <Navbar.Brand><Link to="/" className="nav-link">TOONMAKER</Link></Navbar.Brand>
-          <Link to="/novel-maker" className="mainButton">웹소설 삽화</Link>
+          <Link to="/novel-info" className="mainButton">웹소설 삽화</Link>
 					<div className="mainButton"> 웹툰 그림체 학습</div>
             <Nav className="ml-auto">
               {isLoggedIn ? ( 
