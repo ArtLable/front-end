@@ -1,5 +1,5 @@
 import React from 'react'
-import './pages.css';
+import '../styles/pages.css';
 import CardItem from '../component/NovelCards/CardItem';
 
 

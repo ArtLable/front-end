@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from 'react'
-import './pages.css';
+import '../../styles/pages.css';
+
 
 const User = {
   email: 'test@example.com',

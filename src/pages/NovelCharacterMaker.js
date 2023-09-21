@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../component/Header';
-import './style.css';
+import '../styles/style.css';
 import '../bootstrap.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -49,7 +49,7 @@ function NovelMaker() {
       <div className="novelContainer">
         <div className="novelBlock">
             <div className="novelName">
-                <button onClick={''}>추가</button>
+                <button onClick={''}>소설 추가</button>
             </div>
         <div className="novelInfoBlock">  
             <form>
@@ -123,6 +123,7 @@ function NovelMaker() {
                 </div>
                 <div className="submitButton">
                     <input type="reset" value="취소" />
+                    <input type="submit" value="저장" />
                     <input type="submit" value="다음" onClick={handleCreateCharacter}/>
                 </div>
             </fieldset>

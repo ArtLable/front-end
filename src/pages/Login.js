@@ -1,114 +1,89 @@
-import { React, useEffect, useState } from 'react'
-import './pages.css';
+import React, { useState } from 'react';
+import axios from 'axios';
+import Cookies from 'js-cookie'; 
+import { useNavigate } from 'react-router-dom';
 
-const User = {
-  email: 'test@example.com',
-  pw: 'test2323@@@'
-}
-
-function Login({isOpen, closeModal}) {
-
+function Login() {
   const [email, setEmail] = useState('');
-  const [pw, setPw] = useState("");
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
 
-  const [emailValid, setEmailValid] = useState(false);
-  const [pwValid, setPwValid] = useState(false);
-  const [notAllow, setNotAllow] = useState(true);
+  const navigate = useNavigate();
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-    const regex =
-      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
-      // /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-    if(regex.test(email)) {
-      setEmailValid(true);
-    } else {
-      setEmailValid(false);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const apiUrl = 'http://127.0.0.1:8080/api/v1/authentication/login';
+    const requestData = {
+      memberEmail: email,
+      memberPwd: password,
+    };
+
+    try {
+      const response = await axios.post(apiUrl, requestData, {
+        headers: {
+          'Accept': 'application/json;charset=UTF-8',
+          'Content-Type': 'application/json;charset=UTF-8',
+        },
+      });
+
+      const data = response.data;
+      const accessToken = data.authority[0].accessToken;
+
+      // 액세스 토큰을 쿠키에 저장
+      Cookies.set('accessToken', accessToken);
+
+      setError(null);
+
+      navigate('/');
+
+    } catch (error) {
+      console.error('로그인 오류:', error);
+      setError('로그인에 실패했습니다.');
     }
-  }
+  };
 
-  const handlePw= (e) => {
-    setPw(e.target.value);
-    const rePass =  /^[a-zA-Z\\d`~!@#$%^&*()-_=+]{8,24}$/;
-    if(rePass.test(pw)) {
-      setPwValid(true);
-    } else {
-      setPwValid(false);
-    }
-  }
-
-  const onClickConfirmButton = () => {
-    if(email === User.email && pw === User.pw) {
-      alert('로그인에 성공했습니다.');
-    } else {
-      alert('등록되지 않은 회원입니다.')
-    }
-  }
-
-  useEffect(() => {
-    if(emailValid && pwValid) {
-      setNotAllow(false);
-      return;
-    }
-      setNotAllow(true);
-  }, [emailValid, pwValid])
+  // 에러 메시지 표시
+  const errorMessage = error ? (
+    <div>{error}</div>
+  ) : null;
 
   return (
-      <div className="loginPage" style={{display:isOpen?"block":"none",}}>
-        <div className="loginModal">
-          <div className="titleWrap">
-            LOGIN
-          </div>
-          <div className="contentWrap">
-            <div className="inputTitle">이메일 주소</div>
-            <div className="inputWrap">
-              <input 
-                type='text'
-                className='input' 
-                placeholder='test@gmail.com' 
-                value={email} 
-                onChange={handleEmail}/>
-            </div>
-            <div className="errorMessageWrap">
-              {
-                !emailValid && email.length > 0 && (
-                  <div>올바른 이메일을 입력해주세요.</div>
-                )
-              }
-            </div>
-
-            <div style={{ marginTop: "26px" }}className="inputTitle">비밀번호</div>
-            <div className="inputWrap">
-              <input
-                type='password' 
-                className='input' 
-                placeholder='영문,숫자,특수문자 포함 8자 이상'
-                value={pw}
-                onChange={handlePw}/>
-            </div>  
-            <div className="errorMessageWrap">
-              {
-                !pwValid && pw.length > 0 && (
-                  <div>영문,숫자,특수문자 포함 8자 이상을 입력해주세요.</div>
-                )
-              }
-            </div>
-          </div>
-
-          <div className="buttonBox">
-            <button onClick={onClickConfirmButton} disabled={notAllow} className='loginButton'> 
-              확인
-            </button>
-            <button className='buttonBox'> 
-              회원가입
-            </button>
-            <button onClick={closeModal} className='buttonBox'> 
-              닫기
-            </button>
-          </div>
+    <div>
+      <h2>Login</h2>
+      {errorMessage}
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={handleEmailChange}
+          />
         </div>
-      </div>
-  )
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
 }
 
-export default Login
+export default Login;

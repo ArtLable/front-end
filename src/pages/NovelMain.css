@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 50px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .sidebar button {
+    background-color: #58a147b5;
+    color: rgba(255, 255, 255, 0.786);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 80%;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar button:hover {
+    background-color: #2d8a4972;
+    color: white;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px;
+  }
+  
+  .main-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .main-content form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .main-content label {
+    font-weight: bold;
+  }
+  
+  .main-content input[type="text"],
+  .main-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #34a9449d;
+    border-radius: 3px;
+  }
+  
+  .main-content label.checkbox-label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .main-content input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .main-content button[type="submit"] {
+    background-color: #ffffff;
+    color: rgb(52, 127, 91);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+  
+  .main-content button[type="submit"]:hover {
+    background-color: #00b37d93;
+  }
+
+  /*표(table) 스타일*/
+  .styled-table {
+    width: 90%;
+    border-collapse: separate;
+    border-spacing: 2px;
+    margin-top: 50px;
+  }
+  
+  /* 표 열 헤더 스타일링 */
+  .styled-table th {
+    padding: 10px;
+    text-align: left;
+    font-weight: 400;
+    background-color: #247833ec;
+    color: #fff;
+  }
+  
+  /* 표 데이터 스타일링 */
+  /* .styled-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  } */
+  
+  /* 짝수 행 배경색 스타일링 */
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .styled-table tbody tr:nth-child(odd) {
+    background-color: #3d8e453f;
+  }
+  
+  /* 이미지 셀 스타일링 */
+  .styled-table td:nth-child(5) {
+    text-align: center;
+  }
+  
+  /* 이미지 스타일링 */
+  .styled-table img {
+    max-width: 100px;
+    max-height: 100px;
+    border: 1px solid #ddd;
+  }
