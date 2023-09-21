@@ -112,7 +112,7 @@ body {
   .styled-table {
     width: 90%;
     border-collapse: separate;
-    border-spacing: 2px;
+    border-spacing: 1px;
     margin-top: 50px;
   }
   
