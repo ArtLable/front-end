@@ -14,7 +14,7 @@ body {
     width: 250px;
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 50px;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
@@ -36,14 +36,14 @@ body {
   }
   
   .sidebar button {
-    background-color: #ffffff;
-    color: rgba(51, 135, 35, 0.786);
+    background-color: #58a147b5;
+    color: rgba(255, 255, 255, 0.786);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
-    width: 100%;
+    width: 80%;
     transition: background-color 0.3s;
   }
   
@@ -106,4 +106,47 @@ body {
   
   .main-content button[type="submit"]:hover {
     background-color: #00b37d93;
+  }
+
+  /*표(table) 스타일*/
+  .styled-table {
+    width: 90%;
+    border-collapse: separate;
+    border-spacing: 2px;
+    margin-top: 50px;
+  }
+  
+  /* 표 열 헤더 스타일링 */
+  .styled-table th {
+    padding: 10px;
+    text-align: left;
+    font-weight: 400;
+    background-color: #247833ec;
+    color: #fff;
+  }
+  
+  /* 표 데이터 스타일링 */
+  /* .styled-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  } */
+  
+  /* 짝수 행 배경색 스타일링 */
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .styled-table tbody tr:nth-child(odd) {
+    background-color: #3d8e453f;
+  }
+  
+  /* 이미지 셀 스타일링 */
+  .styled-table td:nth-child(5) {
+    text-align: center;
+  }
+  
+  /* 이미지 스타일링 */
+  .styled-table img {
+    max-width: 100px;
+    max-height: 100px;
+    border: 1px solid #ddd;
   }

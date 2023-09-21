@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './NovelForm.css';
 
 
 export default function NovelForm({onAddNovel}) {
@@ -8,23 +9,28 @@ export default function NovelForm({onAddNovel}) {
         summary: '',
     });
 
+    const genres = ['로맨스','로맨스판타지', 'BL', '현대판타지', '판타지', '무협']
+
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
 
         if (type === 'checkbox' ) {
-            const updatedGenre = checked
-            ? [...novelData.genre, value]
-            : novelData.genre.filter((genre) => genre !== value);
-
-            setNovelData({
+            if(checked) {
+              setNovelData({
                 ...novelData,
-                genre: updatedGenre,
-            });
-        } else {
-            setNovelData({
+                genre: [...novelData.genre, value],
+              });
+            } else {
+              setNovelData({
                 ...novelData,
-                [name]: value,
+                genre: novelData.genre.filter((genre) => genre !== value),
             });
+          } 
+        } else {  
+          setNovelData({
+            ...novelData,
+            [name]: value,
+          });
         }
     };
 
@@ -43,43 +49,41 @@ export default function NovelForm({onAddNovel}) {
     <div className="novel-form">
       <h2>소설 정보 입력</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>소설 이름:</label>
+        <div className="form-group">
+          <label htmlFor='name'>소설 이름</label>
           <input
             type="text"
+            id="name"
             name="name"
             value={novelData.name}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>장르:</label>
-          <label>
-            <input
-              type="checkbox"
-              name="genre"
-              value="판타지"
-              checked={novelData.genre.includes('판타지')}
-              onChange={handleChange}
-            />
-            판타지
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="genre"
-              value="로맨스"
-              checked={novelData.genre.includes('로맨스')}
-              onChange={handleChange}
-            />
-            로맨스
-          </label>
-          {/* 다른 장르들도 추가하세요 */}
+
+        <div className="form-group">
+          <label>장르</label>
+          <div className="genre-checkboxes">
+          { genres.map((genre, index) => (
+            <div key={index} className="genre-checkbox">
+              <input
+                type="checkbox"
+                id={`genre-${index}`}
+                name="genre"
+                value={genre}
+                checked={novelData.genre.includes(genre)}
+                onChange={handleChange}
+              />
+            <label htmlFor={`genre-${index}`}>{genre}</label>
+          </div>
+          ))}
+          </div>
         </div>
-        <div>
+          
+        <div className="form-group">
           <label>전체 줄거리:</label>
-          <textarea
+          <textarea 
             name="summary"
+            id="summary"
             value={novelData.summary}
             onChange={handleChange}
           />

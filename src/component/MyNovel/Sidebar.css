@@ -31,15 +31,15 @@ h2 {
   font-size: 16px;
   margin: 10px; /* 간격 조정 */
   cursor: pointer;
-  background-color: #ffffff;
-  color: rgba(34, 132, 35, 0.656);
+  background-color: #ffffffb7;
+  color: rgba(0, 0, 0, 0.656);
   padding: 5px 10px;
   border-radius: 5px;
   margin-right: 10px; /* 이름 사이의 간격 조정 */
 }
 .novel-name:hover {
   font-size: 16px;
-  margin: 5px; /* 간격 조정 */
+  margin: 10px; /* 간격 조정 */
   cursor: pointer;
   background-color: #6bd6848d;
   color: rgba(255, 255, 255, 0.656);
@@ -48,8 +48,8 @@ h2 {
   margin-right: 10px; /* 이름 사이의 간격 조정 */
 }
 
-button {
-  background-color: #ffffff;
+.sidebar > button {
+  background-color: #00f200;
   color: white;
   border: none;
   cursor: pointer;
