@@ -14,6 +14,7 @@
 
 h2 {
   margin-top: 50px;
+  font-family: "Noto Sans Korean";
 }
 
 .novel-form h2 {
@@ -49,9 +50,13 @@ h2 {
 }
 
 .sidebar > button {
-  background-color: #00f200;
+  background-color: #49494965;
+  font-family: "Noto Sans Korean";
+  font-weight: 500;
+  height: 45px;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: auto; /* 아래로 내려서 아래에 붙이도록 설정 */
+   /* 아래로 내려서 아래에 붙이도록 설정 */
 }

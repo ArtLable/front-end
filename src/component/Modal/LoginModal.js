@@ -55,14 +55,19 @@ function LoginModal({isOpen, closeModal,  onLoginSuccess}) {
       });
 
       const data = response.data;
-      const accessToken = data.authority[0].accessToken;
+      const accessToken = data.authority && data.authority[0] && data.authority[0].accessToken;
 // console.log('넘어온 데이터', data);
-// console.log('넘어온 데이터', data.memberNickname);
-      // localStorage.setItem('accessToken', accessToken);
+// localStorage.setItem('accessToken', accessToken);
 
-      // 액세스 토큰을 쿠키에 저장
-      Cookies.set('memberNickname2', data.memberNickname);
-      Cookies.set('accessToken', accessToken);
+// 멤버 닉네임
+let memberNickName = data.results.loginResponse.memberNickname;
+
+console.log(memberNickName);
+
+// 액세스 토큰을 쿠키에 저장
+Cookies.set('memberNickName', memberNickName);
+Cookies.set('accessToken', accessToken);
+
 
       setError(null);
 
@@ -93,7 +98,7 @@ function LoginModal({isOpen, closeModal,  onLoginSuccess}) {
             <div className="inputTitle">이메일 주소</div>
             <div className="inputWrap">
               <input 
-                type='text'
+                type='email'
                 className='input' 
                 placeholder='test@gmail.com' 
                 value={email} 
@@ -124,7 +129,7 @@ function LoginModal({isOpen, closeModal,  onLoginSuccess}) {
               }
             </div>
           </div>
-          <div className="buttonBox">
+          <div className="">
           <button onClick={(event) => onClickConfirmButton(event)} disabled={notAllow} className='loginButton'> 
             확인
           </button>

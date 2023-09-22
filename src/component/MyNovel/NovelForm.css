@@ -1,12 +1,9 @@
 /* NovelForm.css */
 .novel-form {
     padding: 20px; /* 위아래 간격을 조절 */
+    font-family: "Noto Sans Korean";
   }
 
-.novel-form h2 {
-    margin-top:0;
-  }
-  
   .form-group {
     margin-bottom: 30px; /* 각 form-group의 위아래 간격을 조절 */
   }
@@ -18,9 +15,9 @@
   
   input[type="text"] {
     width: 100%;
-    padding: 10px;
+    padding: 0px 15px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 4px;
     resize: vertical;
   }
@@ -35,29 +32,15 @@
     resize: vertical;
   }
 
-  .genre-checkboxes {
-    display: flex;
-    flex-wrap: wrap;
+  .form-group select {
+    background-color: rgba(81, 172, 94, 0.135);
+    width: 250px;
+    font-weight: 500;
   }
 
-  .genre-checkbox {
-    flex: 0 0 calc(33.33% - 15px);
-    margin-left: 5px;
-    margin-right: 10px;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-  }
-
-  .genre-checkbox input[type="checkbox"] + label {
-    font-size: 17px;
-    line-height: 21px;
-    border-radius: 5px;
-    width: 180px;
-  }
-  
-  .genre-checkbox input[type="checkbox"] + label:before {
-    border:1px solid rgb(22, 135, 69);
-    border-radius: 5px;
+  .form-group option {
+    padding: 50px;
+    background-color: rgba(145, 234, 158, 0.135);
+    color:black;
   }
   

@@ -5,45 +5,29 @@ import './NovelForm.css';
 export default function NovelForm({onAddNovel}) {
     const [novelData, setNovelData] = useState({
         name: '',
-        genre: [],
+        genre:'',
         summary: '',
     });
 
     const genres = ['로맨스','로맨스판타지', 'BL', '현대판타지', '판타지', '무협']
 
     const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-
-        if (type === 'checkbox' ) {
-            if(checked) {
-              setNovelData({
-                ...novelData,
-                genre: [...novelData.genre, value],
-              });
-            } else {
-              setNovelData({
-                ...novelData,
-                genre: novelData.genre.filter((genre) => genre !== value),
-            });
-          } 
-        } else {  
-          setNovelData({
-            ...novelData,
-            [name]: value,
-          });
-        }
-    };
+      const { name, value } = e.target;
+      setNovelData({
+        ...novelData,
+        [name]: value,
+      });
+    };    
 
     const handleSubmit = (e) => {
         e.preventDefault();
         onAddNovel(novelData);
         setNovelData({
             name: '',
-            genre: [],
+            genre: '',
             summary: '',
         });
     };
-
 
   return (
     <div className="novel-form">
@@ -61,22 +45,22 @@ export default function NovelForm({onAddNovel}) {
         </div>
 
         <div className="form-group">
-          <label>장르</label>
-          <div className="genre-checkboxes">
-          { genres.map((genre, index) => (
-            <div key={index} className="genre-checkbox">
-              <input
-                type="checkbox"
-                id={`genre-${index}`}
-                name="genre"
+          <label htmlFor="genre">장르</label>
+          <select
+            id="genre"
+            name="genre"
+            value={novelData.genre}
+            onChange={handleChange}
+          >
+            <option value="">장르를 선택하세요</option>
+            {genres.map((genre, index) => (
+                <option key={index}
                 value={genre}
-                checked={novelData.genre.includes(genre)}
-                onChange={handleChange}
-              />
-            <label htmlFor={`genre-${index}`}>{genre}</label>
-          </div>
-          ))}
-          </div>
+              >
+                {genre}
+                </option>
+            ))}
+          </select>
         </div>
           
         <div className="form-group">

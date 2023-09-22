@@ -11,17 +11,20 @@ body {
   }
   
   .sidebar {
-    width: 250px;
-    background-color: #333;
+    width: 270px;
+    background-color: #33333314;
     color: white;
     padding: 50px;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1;
   }
   
+
   .sidebar h2 {
+    color:rgba(0, 0, 0, 0.787);
+    font-weight: 600;
+    margin-top: 120px;
     font-size: 20px;
-    margin-bottom: 10px;
+    font-family: "Noto Sans Korean";
   }
   
   .sidebar ul {
@@ -35,21 +38,24 @@ body {
     cursor: pointer;
   }
   
-  .sidebar button {
-    background-color: #58a147b5;
-    color: rgba(255, 255, 255, 0.786);
+  /* .sidebar button {
+    background-color: #ffffffba;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 500;
     margin-top: 20px;
     width: 80%;
     transition: background-color 0.3s;
-  }
+    font-family: "Gowun Dodum";
+  } */
   
   .sidebar button:hover {
-    background-color: #2d8a4972;
-    color: white;
+    background-color: #ffffffba;
+    color: rgb(0, 0, 0);
   }
   
   .main-content {
@@ -93,6 +99,7 @@ body {
   }
   
   .main-content button[type="submit"] {
+    font-weight: 600;
     background-color: #ffffff;
     color: rgb(52, 127, 91);
     border: none;
@@ -106,6 +113,7 @@ body {
   
   .main-content button[type="submit"]:hover {
     background-color: #00b37d93;
+    color: black;
   }
 
   /*표(table) 스타일*/
