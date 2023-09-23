@@ -139,7 +139,6 @@ Cookies.set('accessToken', accessToken);
           <button onClick={(event) => onClickConfirmButton(event)} disabled={notAllow} className='loginButton'> 
             확인
           </button>
-            <button className='buttonBox'>회원가입</button>
             <button onClick={closeModal} className='buttonBox'> 
               닫기
             </button>
