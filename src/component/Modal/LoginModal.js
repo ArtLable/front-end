@@ -89,9 +89,15 @@ Cookies.set('accessToken', accessToken);
       setNotAllow(true);
   }, [emailValid, pwValid])
 
+  const handleCloseModal = (e) => {
+    if (e.target.classList.contains('loginPage')) {
+      closeModal();
+    }
+  };
+
   return (
+    <div className={`loginPage ${isOpen ? 'show' : ''}`} onClick={handleCloseModal}>
       <div className="loginPage" style={{display:isOpen?"block":"none",}}>
-        <form onSubmit={onClickConfirmButton}>
         <div className="loginModal">
           <div className="titleWrap">LOGIN</div>
           <div className="contentWrap">
@@ -139,9 +145,8 @@ Cookies.set('accessToken', accessToken);
             </button>
           </div>
         </div>
-      </form>  
       </div>
-      
+    </div>  
   )
 }
 
