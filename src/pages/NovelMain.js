@@ -3,6 +3,7 @@ import Sidebar from '../component/MyNovel/Sidebar';
 import NovelForm from '../component/MyNovel/NovelForm';
 import CharacterInput from '../component/MyNovel/CharacterInput';
 import './NovelMain.css';
+import Header from '../component/Header';
 
 export default function NovelMain() {
 
@@ -34,6 +35,8 @@ export default function NovelMain() {
 
 
   return (
+    <>
+    <Header/>
     <div className="container">
       <div className="main-content">
         <Sidebar novels = {novels} onNovelClick={handleNovelClick}/>
@@ -45,7 +48,7 @@ export default function NovelMain() {
                     <h2>{selectedNovel.name}</h2>
                   </div>
                   <div className="form-group">
-                    <p>장르: {selectedNovel.genre.join(', ')}</p>
+                    <p>장르: {selectedNovel.genre}</p>
                   </div>
                   <div className="form-group">
                     <p>전체 줄거리: {selectedNovel.summary}</p>
@@ -91,5 +94,6 @@ export default function NovelMain() {
           </div>
       </div>
     </div>
+    </>
   );
 }

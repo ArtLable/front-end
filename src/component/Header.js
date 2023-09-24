@@ -61,13 +61,19 @@ function Header() {
       <Navbar bg="light" expand="lg">
         <Container className="headerBar">
           <Navbar.Brand><Link to="/" className="nav-link">TOONMAKER</Link></Navbar.Brand>
-          <Link to="/novel-main" className="mainButton">웹소설 삽화</Link>
-					<div className="mainButton"> 웹툰 그림체 학습</div>
+          <div class="dropdown">
+            <button className="dropbtn mainButton">웹소설</button>
+            <div className="dropdown-content">
+              <a href="/novel">캐릭터 만들기</a>
+              <a href="/novel">삽화 만들기</a>
+            </div>
+          </div>
+					<button className="mainButton"><Link to="/webtoon" className="nav-link">웹툰 그림체 학습</Link></button>
             <Nav className="ml-auto">
               {isLoggedIn ? ( 
                 // 로그인 된 상태의 화면
                 <>
-                  <span className="header-welcome">'{Cookies.get('memberNickname2')}'님 반갑습니다!!</span>
+                  <span className="header-welcome">'{Cookies.get('memberNickName')}'님 반갑습니다!!</span>
                   <button onClick={handleLogout} className="header-button">LOGOUT</button>
                 </>  
               ) : (
