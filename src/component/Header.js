@@ -65,10 +65,10 @@ function Header() {
             <button className="dropbtn mainButton">웹소설</button>
             <div className="dropdown-content">
               <a href="/novel-main">캐릭터 만들기</a>
-              <a href="/novel-main">삽화 만들기</a>
+              <a href="/novel-illustration">삽화 만들기</a>
             </div>
           </div>
-					<div className="mainButton"> 웹툰 그림체 학습</div>
+					<div className="mainButton"><Link to="/webtoon">웹툰 그림체 학습</Link></div>
             <Nav className="ml-auto">
               {isLoggedIn ? ( 
                 // 로그인 된 상태의 화면

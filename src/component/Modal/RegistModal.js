@@ -1,20 +1,23 @@
 import { React, useEffect, useState } from 'react'
 import '../../styles/pages.css';
+import axios from 'axios';
 
 
-const User = {
-  email: 'test@example.com',
-  pw: 'test2323@@@'
-}
-
-function Regist({isOpen, closeModal}) {
+function RegistModal({isOpen, closeModal}) {
 
   const [email, setEmail] = useState('');
-  const [pw, setPw] = useState("");
+  const [emailError, setEmailError] = useState('');
 
+  const [nickName, setNickName] = useState('');
+  const [nickNameError, setNickNameError] = useState('');
+
+  const [pw, setPw] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
+  
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -28,6 +31,20 @@ function Regist({isOpen, closeModal}) {
     }
   }
 
+  const checkEmailDuplication = async () => {
+    try {
+      const response = await axios.get(`/api/v1/members/email/${email}/check`);
+      if (response.data.isDuplicated) {
+        setEmailError('이미 사용중인 이메일 입니다.');
+      } else {
+        setEmailError('');
+      };
+    } catch(error) {
+      console.error('이메일 중복 확인 오류:', error);
+      alert('이메일 중복 확인 중 오류가 발생하였습니다.');
+    }
+  }
+
   const handlePw= (e) => {
     setPw(e.target.value);
     const rePass =  /^[a-zA-Z\\d`~!@#$%^&*()-_=+]{8,24}$/;
@@ -36,27 +53,90 @@ function Regist({isOpen, closeModal}) {
     } else {
       setPwValid(false);
     }
+    
+    if (confirmPassword === e.target.value) {
+      setPasswordsMatch(true); // 비밀번호 일치
+    } else {
+      setPasswordsMatch(false); // 비밀번호 불일치
+    }
+  };
+  
+  const handleConfirmPassword = (e) => {
+    setConfirmPassword(e.target.value);
+    if (pw === e.target.value) {
+      setPasswordsMatch(true); // 비밀번호 일치
+    } else {
+      setPasswordsMatch(false); // 비밀번호 불일치
+    }
+  };
+
+  const handelNickName = (e) => {
+    setNickName(e.target.value);
   }
 
-  const onClickConfirmButton = () => {
-    if(email === User.email && pw === User.pw) {
-      alert('로그인에 성공했습니다.');
-    } else {
-      alert('등록되지 않은 회원입니다.')
-    }
+  const checkNicknameDuplication = async () => {
+    try {
+      const response = await axios.get(`/api/v1/members/nickname/${nickName}/check`);
+      if (response.data.isDuplicated) {
+        setNickNameError('이미 사용중인 닉네임 입니다.')
+      } else {
+        setNickNameError('');
+      }
+    } catch(error) {
+      console.error('닉네임 중복 확인 오류:', error);
+      alert('닉네임 중복 확인 중 오류가 발생하였습니다.');
+    }  
   }
+
+  const onClickConfirmButton = async () => {
+    if (emailValid && pwValid) {
+      if (pw === confirmPassword) {
+        try {
+          const response = await axios.post('/api/v1/members', {
+            memberEmail: email,
+            memberNickName: nickName,
+            memberPwd: pw
+          });
+  
+          if (response.status === 201) {
+            alert('회원가입이 완료되었습니다.');
+            closeModal(); // 모달 닫기
+          } else {
+            alert('회원가입에 실패하였습니다.');
+          }
+        } catch (error) {
+          console.error('회원가입 오류:', error);
+          alert('회원가입 중 오류가 발생하였습니다.');
+        }
+      } else {
+        alert('비밀번호가 일치하지 않습니다.');
+      }
+    } else {
+      alert('입력 정보를 확인해주세요.');
+    }
+  };
+  
 
   useEffect(() => {
-    if(emailValid && pwValid) {
+    if(emailValid && pwValid && email && !emailError && !nickNameError && pw === confirmPassword && passwordsMatch) {
       setNotAllow(false);
       return;
-    }
+    } else {
       setNotAllow(true);
-  }, [emailValid, pwValid])
+    }  
+  }, [emailValid, pwValid, email, emailError, nickNameError, pw, confirmPassword, passwordsMatch]);
+
+  const handleCloseModal = (e) => {
+    if (e.target.classList.contains('registPage')) {
+      closeModal();
+    }
+  };
+
 
   return (
-      <div className="loginPage" style={{display:isOpen?"block":"none",}}>
-        <div className="loginModal">
+    <div className={`registPage ${isOpen ? 'show' : ''}`} onClick={handleCloseModal}>
+  <div className="registPage" style={{ display: isOpen ? "block" : "none" }}>
+        <div className="registModal">
           <div className="titleWrap">
             SIGN UP
           </div>
@@ -69,6 +149,7 @@ function Regist({isOpen, closeModal}) {
                 placeholder='test@gmail.com' 
                 value={email} 
                 onChange={handleEmail}/>
+                <button onClick={checkEmailDuplication}>중복확인</button>
             </div>
             <div className="errorMessageWrap">
               {
@@ -76,8 +157,11 @@ function Regist({isOpen, closeModal}) {
                   <div>올바른 이메일을 입력해주세요.</div>
                 )
               }
+              {emailError && (
+                <div>{emailError}</div>
+              )}
             </div>
-            <div style={{ marginTop: "26px" }}className="inputTitle">비밀번호</div>
+            <div style={{ marginTop: "20px" }}className="inputTitle">비밀번호</div>
             <div className="inputWrap">
               <input
                 type='password' 
@@ -93,9 +177,39 @@ function Regist({isOpen, closeModal}) {
                 )
               }
             </div>
-          </div>
-
-          <div className="buttonBox">
+            <div style={{ marginTop: "20px" }}className="inputTitle" >비밀번호 확인</div>
+            <div className="inputWrap">
+              <input
+                type='password' 
+                className='input' 
+                placeholder='비밀번호 확인'
+                value={confirmPassword}
+                onChange={handleConfirmPassword}/>
+            </div>  
+            <div className="errorMessageWrap">
+              {
+                !passwordsMatch && confirmPassword.length > 0 && (
+                  <div>비밀번호가 일치하지 않습니다.</div>
+                )
+              }
+            </div>
+            <div style={{ marginTop: "20px" }}className="inputTitle" >닉네임</div>
+            <div className="inputWrap">
+              <input
+                type='text' 
+                className='input' 
+                placeholder='닉네임을 입력하세요'
+                value={nickName}
+                onChange={handelNickName}/>
+                <button onClick={checkNicknameDuplication}>중복확인</button>
+            </div>  
+            <div className="errorMessageWrap">
+              {nickNameError && (
+                <div>{nickNameError}</div>
+              )}
+            </div>
+            </div>
+          <div style={{ marginTop: "-30px" }}>
             <button onClick={onClickConfirmButton} disabled={notAllow} className='loginButton'> 
               확인
             </button>
@@ -105,7 +219,8 @@ function Regist({isOpen, closeModal}) {
           </div>
         </div>
       </div>
+      </div>
   )
 }
 
-export default Regist
+export default RegistModal

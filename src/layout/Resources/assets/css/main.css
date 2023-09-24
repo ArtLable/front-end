@@ -106,8 +106,8 @@ figure, figcaption {
 }	
 
 .container {
-	max-width: 1620px;
-	padding: 50px;
+	max-width: 1532px;
+    padding: 30px;
 	
 }
 
@@ -234,13 +234,13 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		color: #34a58e;
+		color: #000000b7;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #35a58e;
+			color: #ffffff;
 		}
 
 	strong, b {
@@ -1530,6 +1530,7 @@ input, select, textarea {
 		left: 0;
 		right: 0;
 		z-index: 1;
+		box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
 	}	
 
 	body {
@@ -1687,7 +1688,7 @@ input, select, textarea {
 		#columns {
 			column-width: 220px;
 			column-gap: 20px;
-			margin-top: 60px
+			margin-top: 80px
 			/* border: 5px solid green; */
 		}
 
@@ -2172,7 +2173,7 @@ input, select, textarea {
 			text-align: center;
 			border-radius: 5px;
 			color: #030f0dc9;
-			font-weight: 550;
+			font-weight: 540;
 			letter-spacing: 1px;
 			background-color: #c4c0c067;
 			font-size: 20px;

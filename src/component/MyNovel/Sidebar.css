@@ -2,18 +2,20 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px; /* Sidebar의 너비 조정 (원하는 너비로 설정) */
   height: 100%;
-  background-color: #333;
-  color: white;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 280px;
+  background-color: #9f9f9f14;
+  color: white;
+  padding: 50px;
+  box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-  margin-top: 50px;
+  margin-top: 30px;
   font-family: "Noto Sans Korean";
 }
 
@@ -50,7 +52,7 @@ h2 {
 }
 
 .sidebar > button {
-  background-color: #49494965;
+  background-color: #000000;
   font-family: "Noto Sans Korean";
   font-weight: 500;
   height: 45px;
@@ -60,3 +62,42 @@ h2 {
   cursor: pointer;
    /* 아래로 내려서 아래에 붙이도록 설정 */
 }
+
+.sidebar button:hover {
+  background-color: #ffffffba;
+  color: rgb(0, 0, 0);
+}
+
+.sidebar h2 {
+  color:rgba(0, 0, 0, 0.787);
+  font-weight: 600;
+  margin-top: 120px;
+  font-size: 20px;
+  font-family: "Noto Sans Korean";
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* .sidebar button {
+  background-color: #ffffffba;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  width: 80%;
+  transition: background-color 0.3s;
+  font-family: "Gowun Dodum";
+} */

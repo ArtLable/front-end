@@ -9,55 +9,7 @@ body {
     display: flex;
     justify-content: flex-start;
   }
-  
-  .sidebar {
-    width: 270px;
-    background-color: #33333314;
-    color: white;
-    padding: 50px;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-  }
-  
 
-  .sidebar h2 {
-    color:rgba(0, 0, 0, 0.787);
-    font-weight: 600;
-    margin-top: 120px;
-    font-size: 20px;
-    font-family: "Noto Sans Korean";
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin: 10px 0;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  /* .sidebar button {
-    background-color: #ffffffba;
-    border-radius: 4px;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 20px;
-    width: 80%;
-    transition: background-color 0.3s;
-    font-family: "Gowun Dodum";
-  } */
-  
-  .sidebar button:hover {
-    background-color: #ffffffba;
-    color: rgb(0, 0, 0);
-  }
-  
   .main-content {
     flex: 1;
     padding: 20px;
@@ -71,6 +23,7 @@ body {
   
   .main-content form {
     background-color: #fff;
+    margin-top: 20px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);

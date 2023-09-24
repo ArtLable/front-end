@@ -89,9 +89,15 @@ Cookies.set('accessToken', accessToken);
       setNotAllow(true);
   }, [emailValid, pwValid])
 
+  const handleCloseModal = (e) => {
+    if (e.target.classList.contains('loginPage')) {
+      closeModal();
+    }
+  };
+
   return (
+    <div className={`loginPage ${isOpen ? 'show' : ''}`} onClick={handleCloseModal}>
       <div className="loginPage" style={{display:isOpen?"block":"none",}}>
-        <form onSubmit={onClickConfirmButton}>
         <div className="loginModal">
           <div className="titleWrap">LOGIN</div>
           <div className="contentWrap">
@@ -133,15 +139,13 @@ Cookies.set('accessToken', accessToken);
           <button onClick={(event) => onClickConfirmButton(event)} disabled={notAllow} className='loginButton'> 
             확인
           </button>
-            <button className='buttonBox'>회원가입</button>
             <button onClick={closeModal} className='buttonBox'> 
               닫기
             </button>
           </div>
         </div>
-      </form>  
       </div>
-      
+    </div>  
   )
 }
 
