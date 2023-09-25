@@ -1,0 +1,108 @@
+.webtoon-style-learning {
+    margin-top: 130px;
+    height: 700px;
+    /* border:2px solid hotpink; */
+    text-align: center;
+  }
+  
+  .step {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+  }
+  /* 왼쪽 컨테이너 */
+  .left-container {
+    width: 45%; /* 왼쪽 컨테이너의 너비를 조절 */
+    display: flex;
+    border:2px solid blue;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* 오른쪽 컨테이너 */
+  .right-container {
+    width: 45%; /* 오른쪽 컨테이너의 너비를 조절 */
+    display: flex;
+    flex-direction: column;
+    border:2px solid red;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  /* 제목 스타일 */
+  .webtoon-style-learning h2 {
+    color: black; /* 검정색 글자색 */
+  }
+  
+  /* 소제목 스타일 */
+  .webtoon-style-learning h3 {
+    color: black; /* 검정색 글자색 */
+  }
+
+  /* 소제목 스타일 */
+  .webtoon-style-learning h5 {
+    color: black; /* 검정색 글자색 */
+    text-align: left;
+    padding: 0px;
+  }
+
+  .webtoon-style-learning h6 {
+    color: black; /* 검정색 글자색 */
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 10px;
+  }
+  
+  /* 입력란 스타일 */
+  .webtoon-style-learning input[type="text"] {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .custom-file-input {
+    border: 1px solid #1f9325;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin: 0px 0px 60px 0px;
+  }
+  
+  .custom-file-input:hover {
+    background-color: #1f9325;
+    color:white;
+  }
+
+  .webtoon-style-learning input[type="file"] {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: none;
+  }
+  
+  /* 버튼 스타일 */
+  .webtoon-style-learning button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: black; 
+    color: white; 
+    border: none;
+    cursor: pointer;
+  }
+
+   button {
+    padding: 10px 20px;
+    background-color: black; 
+    color: white; 
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* 이미지 스타일 */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+ 

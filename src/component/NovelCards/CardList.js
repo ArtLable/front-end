@@ -11,8 +11,7 @@ const CardList = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(//api key 주소 ={개인 api key}
-                );
+                const response = await axios.get('http://127.0.0.1:8080/api/v1/feeds');
                 setCards(response.data.cards);
             } catch (e) {
                 console.log(e);
