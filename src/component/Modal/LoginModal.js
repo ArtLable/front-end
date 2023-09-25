@@ -55,7 +55,7 @@ function LoginModal({isOpen, closeModal,  onLoginSuccess}) {
       });
 
       const data = response.data;
-      const accessToken = data.authority && data.authority[0] && data.authority[0].accessToken;
+      const accessToken = response.data.results.loginResponse.authority[0].accessToken;
 // console.log('넘어온 데이터', data);
 // localStorage.setItem('accessToken', accessToken);
 
@@ -63,6 +63,7 @@ function LoginModal({isOpen, closeModal,  onLoginSuccess}) {
 let memberNickName = data.results.loginResponse.memberNickname;
 
 console.log(memberNickName);
+console.log(accessToken);
 
 // 액세스 토큰을 쿠키에 저장
 Cookies.set('memberNickName', memberNickName);

@@ -7,6 +7,7 @@ import CharacterInput from './component/MyNovel/CharacterInput';
 import WebtoonStyleLearning from './component/MyWebtoon/WebtoonStyleLearning';
 import NovelIllustraion from './component/MyNovel/NovelIllustration';
 import Test from './component/MyNovel/Test/Test';
+import PostBoard from './component/NovelCards/PostBoard';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/novel-main" element={<NovelMain />} />
           <Route path="/novel-illustration" element={<NovelIllustraion />} />
           <Route path="/webtoon" element={<WebtoonStyleLearning />} />
+          <Route path="/post-board" element={<PostBoard />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/test" element={<Test />} />
         </Routes>
