@@ -2168,7 +2168,7 @@ input, select, textarea {
 		} */
 		
 		.mainButton {
-			display: flex;
+			height: 50px;
 			padding: 5px 20px 5px 20px;
 			text-align: center;
 			border-radius: 5px;
@@ -2197,7 +2197,6 @@ input, select, textarea {
 .dropbtn {
 	background-color: #c4c0c067;
 	width: 200px;
-	height: 45px;
 	padding: 5px 20px;
 	border: 0;
 	cursor: pointer;

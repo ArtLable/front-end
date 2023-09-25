@@ -238,3 +238,4 @@ function RegistModal({isOpen, closeModal}) {
 }
 
 export default RegistModal
+

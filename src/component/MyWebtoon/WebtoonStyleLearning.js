@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from '../Header';
 import './WebtoonStyleLearning.css';
 
+
 function WebtoonStyleLearning() {
   const [file, setFile] = useState(null);
   const [text1, setText1] = useState('');
@@ -11,6 +12,7 @@ function WebtoonStyleLearning() {
   const [text3, setText3] = useState('');
   const [generatedImages, setGeneratedImages] = useState([]);
   const [step, setStep] = useState(1);
+
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -43,6 +45,7 @@ function WebtoonStyleLearning() {
       const newGenerateImages = response.data.images; // 이미지 배열 또는 데이터
 
       setGeneratedImages(newGenerateImages);
+
 
     } catch (error) {
       console.error('Error generating images:', error);
@@ -132,3 +135,4 @@ function WebtoonStyleLearning() {
 }
 
 export default WebtoonStyleLearning;
+
