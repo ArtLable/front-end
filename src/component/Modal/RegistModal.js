@@ -33,17 +33,25 @@ function RegistModal({isOpen, closeModal}) {
 
   const checkEmailDuplication = async () => {
     try {
-      const response = await axios.get(`/api/v1/members/email/${email}/check`);
-      if (response.data.isDuplicated) {
+      const response = await axios.get(`http://127.0.0.1:8080/api/v1/members/email/${email}/check`);
+      if (response.data.httpStatus === 400) {
         setEmailError('이미 사용중인 이메일 입니다.');
+        // 중복된 이메일 처리
       } else {
         setEmailError('');
-      };
-    } catch(error) {
+        // 중복되지 않은 이메일 처리
+      }
+    } catch (error) {
       console.error('이메일 중복 확인 오류:', error);
-      alert('이메일 중복 확인 중 오류가 발생하였습니다.');
+      if (error.response && error.response.data && error.response.data.httpStatus === 400) {
+        setEmailError('이미 사용중인 이메일 입니다.');
+        // 중복된 이메일 처리 (네트워크 오류 등으로 인한 예외 발생 시)
+      } else {
+        alert('이메일 중복 확인 중 오류가 발생하였습니다.');
+        // 다른 예외 처리
+      }
     }
-  }
+  }  
 
   const handlePw= (e) => {
     setPw(e.target.value);
@@ -76,17 +84,23 @@ function RegistModal({isOpen, closeModal}) {
 
   const checkNicknameDuplication = async () => {
     try {
-      const response = await axios.get(`/api/v1/members/nickname/${nickName}/check`);
-      if (response.data.isDuplicated) {
+      const response = await axios.get(`http://127.0.0.1:8080/api/v1/members/nickname/${nickName}/check`);
+      if (response.data.httpStatus === 400) {
         setNickNameError('이미 사용중인 닉네임 입니다.')
       } else {
         setNickNameError('');
       }
     } catch(error) {
       console.error('닉네임 중복 확인 오류:', error);
-      alert('닉네임 중복 확인 중 오류가 발생하였습니다.');
-    }  
-  }
+      if (error.response && error.response.data && error.response.data.httpStatus === 400) {
+        setNickNameError('이미 사용중인 닉네임 입니다.');
+        // 중복된 이메일 처리 (네트워크 오류 등으로 인한 예외 발생 시)
+      } else {
+        alert('닉네임 중복 확인 중 오류가 발생하였습니다.');
+        // 다른 예외 처리
+      }
+    }
+  }  
 
   const onClickConfirmButton = async () => {
     if (emailValid && pwValid) {
