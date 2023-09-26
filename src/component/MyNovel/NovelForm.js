@@ -31,7 +31,7 @@ export default function NovelForm({onAddNovel}) {
 
   return (
     <div className="novel-form">
-      <h2>소설 정보 입력</h2>
+      <h2>STEP 1. 소설 정보 입력</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor='name'>소설 이름</label>

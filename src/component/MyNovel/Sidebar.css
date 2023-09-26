@@ -27,6 +27,7 @@ h2 {
 .novel-list {
   display: flex;
   flex-wrap: wrap; /* 수평으로 나열하되 넘치면 다음 줄로 넘어가도록 설정 */
+  justify-content: center;
 }
 
 .novel-name {
@@ -52,7 +53,7 @@ h2 {
 }
 
 .sidebar > button {
-  background-color: #000000;
+  background-color: #ff000073;
   font-family: "Noto Sans Korean";
   font-weight: 500;
   height: 45px;
@@ -60,6 +61,7 @@ h2 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top:20px;
    /* 아래로 내려서 아래에 붙이도록 설정 */
 }
 

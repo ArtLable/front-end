@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import api from '../../api/api';
-
+import { useNavigate } from 'react-router-dom';
+import './PostBoard.css';
+import Header from '../Header';
 
 const PostBoard = () => {
   const [feedContent, setFeedContent] = useState('');
   const [feedCategory, setFeedCategory] = useState('');
   const [file, setFile] = useState(null);
+  const navigate = useNavigate();
 
-//   useEffect(() => {
-//     // Axios 인스턴스를 사용하여 요청 보내기
-//     api.get('http://127.0.0.1:8080/api/v1/authentication/login')
-//       .then((response) => {
-//         console.log(response.data);
-//       })
-//       .catch((error) => {
-//         console.error('요청 오류:', error);
-//       });
-//   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +21,10 @@ const PostBoard = () => {
 
     if (accessToken) {
         const formData = new FormData();
-        formData.append('feed', JSON.stringify({ feedContent, feedCategory }));
+        // formData.append('feed', JSON.stringify({ feedContent, feedCategory }));
+        formData.append("feedContent", feedContent)
+        formData.append("feedCategory", feedCategory)
+        
         if (file) {
             formData.append('files', file);
         }
@@ -37,11 +32,11 @@ const PostBoard = () => {
             console.log(pair[0], pair[1]);
           }
         
-        
+        console.log(accessToken)
         const response = await axios.post('http://127.0.0.1:8080/api/v1/feeds', formData, {
             headers: {
-                Authorization: `Bearer${accessToken}`,
-            },
+              Authorization: accessToken
+            }
         }).catch((error) => {
             console.error('요청 실패:', error);
         });
@@ -52,7 +47,7 @@ const PostBoard = () => {
 
     if (response.data && response.data.httpStatus === 201) {
         alert('게시글이 성공적으로 작성되었습니다.');
-        // 성공 시 필요한 동작 수행 (예: 페이지 이동)
+        navigate('/');
     } else {
         alert('게시글 작성에 실패했습니다.');
     }
@@ -66,27 +61,23 @@ const PostBoard = () => {
     setFile(e.target.files[0]);
   };
 
-//   useEffect(() => {
-//     api.get('http://127.0.0.1:8080/api/v1/feeds')
-//         .then((response) => {
-//             console.log(response.data);
-//         })
-//         .catch((error) => {
-//             console.error('요청 오류:' , error);
-//         });
-//     }, []);    
-
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="post">
+      <Header/>
+      <form className="post-board" onSubmit={handleSubmit}>
+        <h4>피드 작성</h4>
         <label>
-          게시글 내용:
+          내용:
           <textarea value={feedContent} onChange={(e) => setFeedContent(e.target.value)} />
         </label>
         <br />
         <label>
-          게시글 카테고리:
-          <input type="text" value={feedCategory} onChange={(e) => setFeedCategory(e.target.value)} />
+          카테고리:
+          <select value={feedCategory} onChange={(e) => setFeedCategory(e.target.value)} >
+            <option value="">카테고리 선택</option>
+            <option value="웹소설 삽화">웹소설 삽화</option>
+            <option value="웹툰 그림체 학습">웹툰 그림체 학습</option>
+          </select>  
         </label>
         <br />
         <label>

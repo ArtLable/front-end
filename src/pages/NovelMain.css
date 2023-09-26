@@ -32,6 +32,11 @@ body {
   .main-content label {
     font-weight: bold;
   }
+  .main-content label:hover {
+    font-weight: bold;
+    box-shadow: 0px 0px 0px 0.3px;
+    background-color: white;
+  }
   
   .main-content input[type="text"],
   .main-content textarea {
@@ -71,26 +76,28 @@ body {
 
   /*표(table) 스타일*/
   .styled-table {
-    width: 90%;
+    justify-content: center;
+    width: 100%;
     border-collapse: separate;
     border-spacing: 1px;
     margin-top: 50px;
   }
-  
+
   /* 표 열 헤더 스타일링 */
   .styled-table th {
+
     padding: 10px;
-    text-align: left;
+    text-align: center;
     font-weight: 400;
     background-color: #247833ec;
     color: #fff;
   }
   
   /* 표 데이터 스타일링 */
-  /* .styled-table td {
-    padding: 10px;
+  .styled-table td {
+    padding: 8px;
     border: 1px solid #ddd;
-  } */
+  }
   
   /* 짝수 행 배경색 스타일링 */
   .styled-table tbody tr:nth-child(even) {
@@ -110,4 +117,77 @@ body {
     max-width: 100px;
     max-height: 100px;
     border: 1px solid #ddd;
+  }
+
+  #fileInput {
+    display: none;
+  }
+
+  .novel-file {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(167, 171, 167, 0.328);
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+  }
+
+  .form-group h4, h2 {
+    color: black;
+    margin-left: 10px;
+  }
+
+  .step-title > h2 {
+    padding:0px;
+    color: black;
+  }
+
+  .form-group span {
+    color: rgba(0, 0, 0, 0.594);
+    font-size: 15px;
+  }
+
+  .novel-form button+button {
+    margin-left: 15px;
+  }
+
+  .form-group-button2 {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .form-group-button4 {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .form-group-button1 {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+  }
+  .form-group-button3 {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+  }
+  
+  .left-button {
+    margin-top: 10px;
+  }
+
+  .character-table td {
+    font-size: 15px;
+    color:rgba(0, 0, 0, 0.802);
+  }
+
+  .summarize {
+    height: 200px;
+  }
+
+  .form-form {
+    border: 2px solid rgba(38, 107, 33, 0.394);
+    border-radius: 10px;
+    padding: 10px;
   }

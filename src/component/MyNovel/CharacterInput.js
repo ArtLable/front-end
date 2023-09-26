@@ -160,7 +160,7 @@ export default function CharacterInput({ onCharacterSubmit }) {
                 <img src={characterImageUrl} alt="캐릭터 이미지" />
             </div>    
         )}
-        <button onClick={handleSubmit} disabled={isLoading}>
+        <button className="left-button" onClick={handleSubmit} disabled={isLoading}>
             {isLoading ? '로딩 중...' : '캐릭터 생성'}
         </button>
         </div>

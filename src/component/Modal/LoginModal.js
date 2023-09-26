@@ -55,7 +55,7 @@ function LoginModal({isOpen, closeModal,  onLoginSuccess}) {
       });
 
       const data = response.data;
-      const accessToken = response.data.results.loginResponse.authority[0].accessToken;
+      const accessToken = "Bearer "+response.data.results.loginResponse.authority[0].accessToken;
 // console.log('넘어온 데이터', data);
 // localStorage.setItem('accessToken', accessToken);
 

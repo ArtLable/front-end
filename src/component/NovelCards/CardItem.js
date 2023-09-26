@@ -30,13 +30,13 @@ const CardItem = ({ card }) => {
       <button type="submit" className="saveButton">save</button>
       </form>
         <div className="detailTitle">
-          짜잔 제가 만든 웹소설 삽화에요 완전 맘에들어!!!
+        로맨스판타지 소설 삽화 평가 부탁드립니다!
         </div>
         <div className="detail">
-          너무 느낌있게 잘 만들어지지 않았나요? 제가 생각한 이미지랑 정말 찰떡이에요!!!
+        로맨스판타지 소설이라서 SDXL 1.0 프롬프트에 art by Artgerm 을 넣었는데 어떤가요?? 혹시 다른 작가 추천해주실 수 있나요? 추가적인 프롬프트로는 '6k, approaching perfection, masterpiece, best quality, intricate, sharp, focused, not blurry' 넣어서 이미지 생성했습니다.
         </div>
         <div className="detail">
-          #웹소설 #여기서 #살아남기 #어려울걸?
+        #SDXL 1.0 #로맨스판타지 #평가부탁 #웹소설 #삽화
         </div>
         <div className='commentTitle'>
           댓글
@@ -44,7 +44,7 @@ const CardItem = ({ card }) => {
         <div className='commentContent'>
           kej231 : 우와 그림체 진쨔 너무 이쁘게 나왔네요~
           toonlove : 멋지네요~~ ~좋아요 누르고 갑니다!!
-          닉네임못정함 : 그림체 보소 진짜 러블리하다
+          
         </div>
         <div className='commentWrite'>
           <form className="d-flex">

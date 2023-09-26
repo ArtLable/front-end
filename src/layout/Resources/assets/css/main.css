@@ -400,7 +400,7 @@ input, select, textarea {
 		transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 		background-color: transparent;
 		border: 0;
-		border-radius: 10px;
+		border-radius: 5px;
 		color: #4dae62;
 		cursor: pointer;
 		display: inline-block;
@@ -2234,4 +2234,17 @@ input, select, textarea {
   .dropdown:hover .dropdown-content {
 	display: block;
   }
+
+  .character-input h4 {
+	margin-top: 0px;
+	font-weight: 500;
+	text-align: center;
+	color:rgb(26, 87, 48);
+	padding: 10px;
+	border-radius: 100px;
+	background-color: #28a17b64;
+  }
  
+  .next-button {
+	margin-bottom: 0px;
+  }
