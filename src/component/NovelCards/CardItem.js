@@ -42,8 +42,7 @@ const CardItem = ({ card }) => {
           댓글
         </div>
         <div className='commentContent'>
-          kej231 : 우와 그림체 진쨔 너무 이쁘게 나왔네요~
-          toonlove : 멋지네요~~ ~좋아요 누르고 갑니다!!
+          kej231 : 그림체 진쨔 너무 이쁘게 나왔네요~
           
         </div>
         <div className='commentWrite'>

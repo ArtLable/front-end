@@ -213,7 +213,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: #a0a0a1;
+		color: #5b5b5b;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 15pt;
 		font-weight: 300;
@@ -2193,11 +2193,14 @@ input, select, textarea {
 	margin-top: 8px;
 }
 
+div >.bt {
+	width: 220px;
+}
 /* 드롭다운 버튼 스타일 */
 .dropbtn {
-	background-color: #c4c0c067;
-	width: 200px;
-	padding: 5px 20px;
+	background-color: #9d9b9b67;
+	width: 180px;
+	padding: 8px 20px;
 	border: 0;
 	cursor: pointer;
   }
@@ -2247,4 +2250,41 @@ input, select, textarea {
  
   .next-button {
 	margin-bottom: 0px;
+  }
+
+  select > option {
+	background-color: #91c4b9c5;
+	color:rgb(49, 68, 54)
+  }
+  select {
+	text-align: center;
+	width: 200px;
+	height: 50px;
+	padding: 10px;
+	
+	/* 폰트 및 색상 설정 */
+	font-size: 18px;
+	color: #333;
+  
+	/* 테두리 및 배경색 설정 */
+	/* border: none; */
+	border-radius: 5px;
+	
+	 /* 드롭다운 화살표 스타일링을 위한 웹킷 브라우저 전용 속성 */
+	 -webkit-appearance: none; 
+	 -moz-appearance: none; 
+	 appearance:none;
+  
+	 background-color:#fff; 
+	 
+	  /* 화살표 이미지 추가 */
+	  background-image:url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2.7mm .6em .6em"><polygon points="0,1.5mm .6em,1.5mm .3em,3mm" fill="%23000000"/></svg>');
+	  background-repeat:no-repeat; 
+	  background-position:right .15em top .7em; 
+  
+  }
+  
+  /* 마우스 호버 시 배경색 변경 */
+  select:hover {
+	  background-color:#0a742e68; 
   }

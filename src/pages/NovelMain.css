@@ -119,10 +119,6 @@ body {
     border: 1px solid #ddd;
   }
 
-  #fileInput {
-    display: none;
-  }
-
   .novel-file {
     display: flex;
     justify-content: center;
@@ -179,7 +175,9 @@ body {
 
   .character-table td {
     font-size: 15px;
-    color:rgba(0, 0, 0, 0.802);
+    color: rgba(0, 0, 0, 0.802);
+    text-align: center;
+    vertical-align: middle;
   }
 
   .summarize {
@@ -187,7 +185,19 @@ body {
   }
 
   .form-form {
-    border: 2px solid rgba(38, 107, 33, 0.394);
+    width: 100%;
+    /* border: 2px solid rgba(38, 107, 33, 0.394); */
     border-radius: 10px;
     padding: 10px;
+  }
+
+  .form {
+    display: flex;
+  }
+
+  .img-box {
+    display: flex;
+  }
+  .img-box img {
+    width: 300px;
   }

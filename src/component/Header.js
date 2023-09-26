@@ -62,13 +62,10 @@ function Header() {
         <Container className="headerBar">
           <Navbar.Brand><Link to="/" className="nav-link">TOONMAKER</Link></Navbar.Brand>
           <div class="dropdown">
-            <button className="dropbtn mainButton">웹소설</button>
-            <div className="dropdown-content">
-              <a href="/novel-main">캐릭터 만들기</a>
-              <a href="/novel-illustration">삽화 만들기</a>
+            <button className="dropbtn mainButton"><Link to="/novel-main">웹소설</Link></button>
             </div>
-          </div>
-					<div className="mainButton"><Link to="/webtoon">웹툰 그림체 학습</Link></div>
+					<div className="bt dropbtn mainButton"><Link to="/webtoon">웹툰 그림체 학습</Link></div>
+					<div className="dropbtn mainButton"><Link to="/webtoon">피드작성</Link></div>
             <Nav className="ml-auto">
               {isLoggedIn ? ( 
                 // 로그인 된 상태의 화면

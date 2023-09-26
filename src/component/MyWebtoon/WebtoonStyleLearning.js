@@ -59,6 +59,15 @@ function WebtoonStyleLearning() {
   const handleNextStep = () => {
     // 다음 단계로 이동
     setStep(2);
+    setGeneratedImages([]);
+    setShowImages([]);
+    setFile(null);
+    setText1('');
+    setText2('');
+    setImages([]);
+    setText3('');
+    setGeneratedImages([]);
+    setShowImages(false);
   };
 
   const handlePreviousStep = () => {
@@ -69,6 +78,9 @@ function WebtoonStyleLearning() {
   const showAlert = () => {
     alert('크로마 디비 생성 완료');
   }  
+
+    // 파일과 텍스트 입력 필드 상태 초기화
+
 
   return (
     <>
@@ -144,10 +156,13 @@ function WebtoonStyleLearning() {
                         </a>
                     </div>
                     ))};
-                    <input type="text" placeholder="원하는 캐릭터의 구도, 색상, 특징 입력" value={text3} onChange={handleText3Change} />
+                    <textarea type="textarea" spellCheck="false" style={{width: '820px',outline: 'none', height: '150px', whiteSpace: 'pre-wrap', wordWrap: 'break-word'}} placeholder="원하는 캐릭터의 구도, 색상, 특징 입력"></textarea> 
+                    {/* value={text3} onChange={handleText3Change} /> */}
                     <h6>ex. 고개를 왼쪽으로 돌리고 있는 짱구, 모자를 쓴 짱구, 모든 색을 흑백으로 만든 사진</h6>
                     {/* <button onClick={handleGenerateMoreImages}>이미지 생성</button> */}
-                    <button onClick={handleGenerateMoreImages}>이미지 생성</button>
+                    <button onClick={() => {
+                      setTimeout(toggleImages, 30000); // '이미지 생성' 버튼 클릭 후 30초 딜레이
+                    }}>이미지 생성</button>
                 </div>    
                 <div className='right-container'>
                   {showImages && (
@@ -199,7 +214,9 @@ function WebtoonStyleLearning() {
             </>
         )}
          {step === 1 && (
-          <button className='next-button'onClick={handleNextStep}>다음</button>
+          <div className="next-button">
+            <button className='next-button'onClick={handleNextStep}>다음</button>
+          </div>
         )}
         {step === 2 && (
           <button onClick={handlePreviousStep}>이전</button>

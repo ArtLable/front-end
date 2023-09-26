@@ -8,6 +8,7 @@ import WebtoonStyleLearning from './component/MyWebtoon/WebtoonStyleLearning';
 import NovelIllustraion from './component/MyNovel/NovelIllustration';
 import Test from './component/MyNovel/Test/Test';
 import PostBoard from './component/NovelCards/PostBoard';
+import FaceSwap from './pages/FaceSwap';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/post-board" element={<PostBoard />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/face-swap" element={<FaceSwap />} />
         </Routes>
       </Router>
     </div>
